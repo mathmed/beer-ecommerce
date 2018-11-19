@@ -24,45 +24,9 @@
 			   <!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
-						<li><a href="/beer-ecommerce/public/products">Branded Foods</a></li>
-						<li><a href="/beer-ecommerce/public/household">Households</a></li>
-						<li class="dropdown mega-dropdown active">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>				
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>	
-										<li><a href="/beer-ecommerce/public/vegetables">Vegetables</a></li>
-										<li><a href="/beer-ecommerce/public/vegetables">Fruits</a></li>
-									</ul>
-								</div>                  
-							</div>				
-						</li>
-						<li><a href="/beer-ecommerce/public/kitchen">Kitchen</a></li>
-						<li><a href="/beer-ecommerce/public/short-codes">Short Codes</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="/beer-ecommerce/public/drinks">Soft Drinks</a></li>
-										<li><a href="/beer-ecommerce/public/drinks">Juices</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="/beer-ecommerce/public/pet">Pet Food</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="/beer-ecommerce/public/frozen">Frozen Snacks</a></li>
-										<li><a href="/beer-ecommerce/public/frozen">Frozen Nonveg</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="/beer-ecommerce/public/bread">Bread & Bakery</a></li>
+						<?php foreach($dados as $dado){ ?>
+							<li><a href="/beer-ecommerce/public/"><?php echo $dado['descricao_categoria'] ?></a></li>
+						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
 			</nav>
@@ -492,7 +456,7 @@
 					<div class="col-md-3 w3ls_w3l_banner_left">
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-							<div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+							<div class="tag"><img src="<?=base_url("assets/public/images/tag.png")?>" alt=" " class="img-responsive" /></div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">

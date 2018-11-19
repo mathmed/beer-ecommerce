@@ -187,7 +187,8 @@ $(document).ready(function(){
         }
     })
 
-    $("#deslogar").click(function(){window.location = "auth/deslogar"})
+    /* chamando função para deslogar do sistema */
+    $("#deslogar").click(function(){window.location = "/beer-ecommerce/dash/auth/deslogar"})
                
 
 }); 

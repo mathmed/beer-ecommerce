@@ -1,63 +1,36 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/* Model de controle do usuario */
+/* Model de usuários do sistema */
 Class Usuario_model extends CI_Model{
 
-    /* Função para retornar um usuário do db */
-    public function getUserByCPF($cpf = NULL, $tipo_user = NULL){
+    /* atributos do model de usuário */
+    public $id_usuario;
+    public $cpf;
+    public $nome;
+    public $email;
+    public $senha;
+    public $data_nascimento;
+    public $apelido;
+    public $data_cadastro;
+    public $id_endereco;
+    public $id_contato;
 
-        /* Verifica se foi passado um cpf e um tipo de usuário (adm ou normal) */
-        if($cpf && $tipo_user){
+    /* Construtor do model de usuário */
+    public function __constructor($dados, $endereco, $contato){
 
-            /* Definindo um limite da query */
-            $this->db->limit(1);
-
-            if($tipo_user == "adm"){
-                /* em caso de usuário adm */
-                /* Condição do id */
-                $this->db->where("cpf_adm", $cpf);
-
-                /* requisitando e retornando */
-                $query = $this->db->get("adm");
-            }else{
-
-                /* em caso de usuário comum */
-                /* Condição do id */
-                $this->db->where("cpf", $cpf);
-
-                /* requisitando e retornando */
-                $query = $this->db->get("usuario");
-            }
-
-            /* Retornando o resultado */
-            return $query->row();
-        }
-    
-        
+        $this->id_usuario = $dados['id_usuario'];
+        $this->cpf = $dados['cpf'];
+        $this->nome = $dados['nome'];
+        $this->email = $dados['email'];
+        $this->senha = $dados['senha'];
+        $this->data_nascimento = $dados['data_nascimento'];
+        $this->apelido = $dados['apelido'];
+        $this->data_cadastro = $dados['data_cadastro'];
+        $this->id_endereco = $endereco;
+        $this->id_contato = $contato;
     }
 
-    /* Função para cadastrar o usuário no sistema */
-    public function cadastrarUsuario ($dados){
-
-        /* Verifica se os dados foram recebidos */
-        if($dados){
-
-            /* verifica se o usuário já existe */
-            if(!$this->getUserByCPF($dados["cpf"], "comum")){
-
-                /* tentando cadastrar o usuário */
-                if($this->db->insert("usuario", $dados))
-                    $this->session->set_flashdata('cadastrar_usuario', "");
-                else
-                    $this->session->set_flashdata('cadastrar_usuario', "");
-            }
-
-            /* Caso já existe um usuário, retornar a mensagem de erro */
-            $this->session->set_flashdata('cadastrar_usuario', "");
-        }
-        
-    }
 }
 
 

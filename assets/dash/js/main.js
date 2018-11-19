@@ -186,6 +186,8 @@ $(document).ready(function(){
             }
         }
     })
+
+    $("#deslogar").click(function(){window.location = "auth/deslogar"})
                
 
 }); 

@@ -4,6 +4,10 @@
 	margin-right: 8px;
 }
 
+#deslogar {
+    cursor: pointer;
+}
+
 .logo-text {
 	font-weight: bold;
 	font-size: 2em;

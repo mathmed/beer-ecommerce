@@ -1,6 +1,3 @@
-
-<?php print_r($categoria); ?>
-
 <!-- products-breadcrumb -->
 <div class="products-breadcrumb">
 		<div class="container">
@@ -28,7 +25,7 @@
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<?php foreach($dados as $dado){ ?>
-							<li><a href="/beer-ecommerce/public/"><?php echo $dado['descricao_categoria'] ?></a></li>
+							<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
 						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->

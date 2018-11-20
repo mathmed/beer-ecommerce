@@ -39,22 +39,17 @@
             </tr>
         </thead>
         <tbody>
-        <?php
-            /* Listando os dados */
+        <?php foreach($dados as $dado){ ?>
+            <tr>
+                <td class = "text-center">#<?=$dado['id_marca']?></td>
+                <td class = "text-center"><?=$dado['nome_marca']?></td>
 
-            /* listando as marcas */
-            foreach($dados as $dado){
-                echo "<tr>";
-                echo "<td class = \"text-center\">#".$dado['id_marca']."</td>";
-                echo "<td class = \"text-center\">".$dado['nome_marca']."</td>";
-
-                echo "<td class = \"text-center\">
-                        <button nome-marca =".str_replace(" ", "_", $dado['nome_marca'])." id-marca =".$dado['id_marca']." class = \"btn btn-sm btn-info editar-marca\"><i class = \"fa fa-edit\"></i></button>
-                    </td>";
-                echo "</tr>";
-            }
-
-        ?>
+                <td class = "text-center">
+                    <button nome-marca ="<?= str_replace(" ", "_", $dado['nome_marca']) ?>" id-marca ="<?=$dado['id_marca']?>" class = "btn btn-sm btn-info editar-marca"><i class = "fa fa-edit"></i></button>
+                </td>
+            </tr>
+            
+        <?php } ?>
         </tbody>
     </table>
 

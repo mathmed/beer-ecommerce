@@ -41,7 +41,6 @@
                 <td class="text-center">
                     <a href = '/beer-ecommerce/dash/promocao/editar/<?=$promocao['id_promocao']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
                 </td>
-
            </tr>
 
            <tr>

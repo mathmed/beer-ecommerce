@@ -45,10 +45,11 @@
         <div class = "form-group">
             <label>Marca</label>
             <select name = "marca" class = "form-control" required>
-                <?php
-                    foreach($marcas as $marca)
-                        echo "<option value = '".$marca['id_marca']."'>".$marca['nome_marca']."</option>";            
-                ?>
+
+                <?php foreach($marcas as $marca){ ?>
+                    <option value = '<?=$marca['id_marca'] ?>'><?=$marca['nome_marca'] ?></option>            
+                <?php } ?>
+
             </select>
         </div>
 
@@ -56,10 +57,11 @@
             <label>Adicione categorias à essa bebida</label>
             <select multiple='' name='categorias[]' class='ui fluid normal dropdown' id = 'categorias' required>
                 <option value=''>Categorias</option>
-                <?php
-                    foreach($categorias as $categoria)
-                        echo "<option value = '".$categoria['id_categoria']."'>".$categoria['descricao_categoria']."</option>";            
-                ?>
+
+                <?php foreach($categorias as $categoria){ ?>
+                    <option value = '<?=$categoria['id_categoria']?>'><?= $categoria['descricao_categoria'] ?></option> 
+                <?php } ?>
+                
             </select>
         </div>
 

@@ -41,22 +41,17 @@
         </thead>
         <tbody>
 
-        <?php
-            /* Listando os dados */
+        <?php foreach($dados as $dado){ ?>
+            <tr>
+                <td class = "text-center">#<?=$dado['id_categoria']?></td>
+                <td class = "text-center"><?=$dado['descricao_categoria']?></td>
 
-            /* listando as categorias */
-            foreach($dados as $dado){
-                echo "<tr>";
-                echo "<td class = \"text-center\">#".$dado['id_categoria']."</td>";
-                echo "<td class = \"text-center\">".$dado['descricao_categoria']."</td>";
+                <td class = "text-center">
+                    <button nome-categoria ="<?= str_replace(" ", "_", $dado['descricao_categoria']) ?>" id-categoria ="<?=$dado['id_categoria']?>" class = "btn btn-sm btn-info editar-categoria"><i class = "fa fa-edit"></i></button>
+                </td>
+            </tr>
+        <?php } ?>
 
-                echo "<td class = \"text-center\">
-                    <button nome-categoria =".str_replace(" ", "_", $dado['descricao_categoria'])." id-categoria =".$dado['id_categoria']." class = \"btn btn-sm btn-info editar-categoria\"><i class = \"fa fa-edit\"></i></button>
-                </td>";
-                echo "</tr>";
-            }
-
-        ?>
         </tbody>
     </table>
 

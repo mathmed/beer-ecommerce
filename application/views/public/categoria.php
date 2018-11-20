@@ -54,7 +54,7 @@
                                             <div class="snipcart-thumb">
                                                 <a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
                                                 <p><?php echo $item['nome_bebida']; ?></p>
-                                                <h4><?php echo $item['preco_bebida']; ?><span>$10.00</span></h4>
+                                                <h4>R$ <?php echo $item['preco_bebida']; ?><span>$10.00</span></h4>
                                             </div>
                                             <div class="snipcart-details">
                                                 <form action="#" method="post">
@@ -62,13 +62,13 @@
                                                         <input type="hidden" name="cmd" value="_cart" />
                                                         <input type="hidden" name="add" value="1" />
                                                         <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="can - tuna for cats" />
-                                                        <input type="hidden" name="amount" value="8.00" />
+                                                        <input type="hidden" name="item_name" value="<?php echo $item['nome_bebida']; ?>" />
+                                                        <input type="hidden" name="amount" value="<?php echo $item['preco_bebida']; ?>" />
                                                         <input type="hidden" name="discount_amount" value="1.00" />
                                                         <input type="hidden" name="currency_code" value="USD" />
                                                         <input type="hidden" name="return" value=" " />
                                                         <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                                        <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
                                                     </fieldset>
                                                 </form>
                                             </div>

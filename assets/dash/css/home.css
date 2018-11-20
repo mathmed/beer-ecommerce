@@ -4,6 +4,39 @@
 	margin-right: 8px;
 }
 
+.label {
+	font-size: 12px;
+	font-weight: bold;
+	color: grey;
+}
+
+.custom-spinner-blue {
+	color:#2F5671;
+	font-size: 36px;
+}
+
+.custom-spinner-primary {
+	color:#337ab7;
+	font-size: 36px;
+}
+
+.custom-spinner-green {
+	color:#008000;
+	font-size: 36px;
+}
+.custom-spinner-red {
+	color:red;
+	font-size: 36px;
+}
+
+.margin-top {
+	margin-top: 10px;
+}
+
+#deslogar {
+    cursor: pointer;
+}
+
 .logo-text {
 	font-weight: bold;
 	font-size: 2em;
@@ -415,7 +448,7 @@
 	transition: .8s all;
 }
 
-.btn-auxiliar:hover{
+.btn-auxiliar:hover, .btn-auxiliar:focus{
 	color: #00994c;
 	background:white;
 }
@@ -427,7 +460,7 @@
 	transition: .8s all;
 }
 
-.btn-voltar:hover{
+.btn-voltar:hover, .btn-voltar:focus{
 	color: red;
 	background:white;
 }

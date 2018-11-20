@@ -5,7 +5,7 @@
 
 
 <div class = "collapse" id = "collapse-add-promocao">
-    <form method = "POST" action = "/beer-ecommerce/dash/promocao/gravar">
+    <form method = "POST" action = "/beer-ecommerce/dash/promocao/gravar" id = 'form-add-promocao'>
         <input type = "hidden" name = "tipo" value = "adicionar">
         <div class = "row">
             <div class = "col-md-4">
@@ -29,8 +29,8 @@
             </div>
         </div>
 
-        <div class = "center div-promocoes">
-            <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+        <div class = "center div-promocoes" id = 'div-add-promocao'>
+            <button type = "submit" class = "btn btn-adicionar" id = 'btn-add-promocao'><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
         </div>
 
     </form>

@@ -24,7 +24,7 @@
 </div>
 
 <div class = "collapse" id = "collapse-estoque">
-    <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar">
+    <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar" id = 'form-add-estoque'>
         <input type = "hidden" name = 'tipo' value = "estoque-add">
         <input type = "hidden" name = 'id_bebida' value = "<?=$bebida['id_bebida']?>">
         <input type = "hidden" name = 'qtd_estoque' value = "<?=$bebida['qtd_estoque']?>">
@@ -37,8 +37,8 @@
                     <input class = "form-control" name = "quantidade-add-estoque" type = "number">
                 </div>
 
-                <div class = "col-md-4">
-                    <button type = 'submit' class = "btn btn-auxiliar">Adicionar</button>
+                <div class = "col-md-4" id = 'div-add-estoque'>
+                    <button id = 'btn-add-estoque' type = 'submit' class = "btn btn-auxiliar">Adicionar</button>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
 </div>
 
 <div class = "collapse" id = "collapse-remove">
-    <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar">
+    <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar" id = 'form-remover-estoque'>
         <input type = "hidden" name = 'tipo' value = "estoque-remove">
         <input type = "hidden" name = 'id_bebida' value = "<?=$bebida['id_bebida']?>">
         <input type = "hidden" name = 'qtd_estoque' value = "<?=$bebida['qtd_estoque']?>">
@@ -59,8 +59,8 @@
                     <input class = "form-control" name = "quantidade-remove-estoque" type = "number">
                 </div>
 
-                <div class = "col-md-4">
-                    <button type = 'submit' class = "btn btn-voltar">Remover</button>
+                <div class = "col-md-4" id = 'div-remover-estoque'>
+                    <button id = 'btn-remover-estoque' type = 'submit' class = "btn btn-voltar">Remover</button>
                 </div>
             </div>
         </div>

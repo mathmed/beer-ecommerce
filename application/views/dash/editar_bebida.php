@@ -13,12 +13,13 @@
 
 <div class = "form-add-bebidas">
 
-    <?= form_open_multipart('dash/bebida/gravar') ?>
+    <?= form_open_multipart('dash/bebida/gravar', "id='form-editar-bebida'") ?>
         <input type = "hidden" name = "acao_bebida" value = "editar"> 
         <input type = "hidden" name = "tipo" value = "bebida"> 
         <input type = "hidden" name = "id_bebida" value = "<?= $bebida['id_bebida'] ?>">
         <input type = "hidden" name = "qtd_estoque" value = "<?= $bebida['qtd_estoque'] ?>">
-        
+        <input type = "hidden" name = "status_bebida" value = "<?= $bebida['status_bebida'] ?>">
+
         <div class = "form-group">
             <label>Nome da bebida</label>
             <input value = "<?= $bebida['nome_bebida'];?>" name = "nome_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>
@@ -95,8 +96,8 @@
             ?>
 
         </div>        
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Atualizar</button>
+        <div class = "center" id = 'div-editar-bebida'>
+            <button id = 'btn-editar-bebida' type = "submit" class = "btn btn-adicionar">Atualizar</button>
         </div>
         
         <?= form_close() ?> 

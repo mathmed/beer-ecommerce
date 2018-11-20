@@ -13,7 +13,7 @@
 
 <div class = "editar-fornecedor">
 
-<?= form_open_multipart('dash/fornecedor/gravar') ?>
+<?= form_open_multipart('dash/fornecedor/gravar', "id='form-att-fornecedor'") ?>
     <input type = 'hidden' name = 'id_fornecedor' value = '<?= $fornecedor[0]['id_fornecedor'] ?>'>
     <input type = 'hidden' name = 'id_contato' value = '<?= $fornecedor[0]['id_contato'] ?>'>
     <input type = 'hidden' name = 'id_endereco' value = '<?= $fornecedor[0]['id_endereco'] ?>'>
@@ -81,9 +81,9 @@
         <textarea name = "complemento" class = "form-control"><?= $fornecedor[0]['complemento'] ?></textarea>
     </div>
 
-    <div class = "center">
+    <div class = "center" id = 'div-att-fornecedor'>
         <button type = "button" class = "btn btn-voltar" data-toggle = 'modal' data-target = "#deletar-fornecedor">Deletar</button>
-        <button type = "submit" class = "btn btn-adicionar margin-left">Atualizar</button>
+        <button id = 'btn-att-fornecedor' type= "submit" class = "btn btn-adicionar margin-left">Atualizar</button>
     </div>
 
 <?= form_close() ?>

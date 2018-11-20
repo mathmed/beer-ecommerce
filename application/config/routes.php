@@ -50,45 +50,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+/* redirecinamento para a tela pública */
+$route['default_controller'] = "public/home";
+
 /* Rotas do dashboard */
-$route['default_controller'] = 'auth';
-$route["bebida"] = "bebida";
-$route["contato"] = "contato";
-$route["endereco"] = "endereco";
-$route["fornecedor"] = "fornecedor";
-$route["marca"] = "marca";
-$route["pagamento"] = "pagamento";
-$route["pedido"] = "pedido";
-$route["promocao"] = "promocao";
-$route["usuario"] = "usuario";
-$route["base"] = "base";
-$route["categoria"] = "categoria";
+$route['dash'] = "dash/auth";
 
 
-//Rotas publicas
-$route["home"] = "home";
-$route["about"] = "about";
-$route["bread"] = "bread";
-$route["checkout"] = "checkout";
-$route["drinks"] = "drinks";
-$route["events"] = "events";
-$route["faqs"] = "faqs";
-$route["frozen"] = "frozen";
-$route["kitchen"] = "kitchen";
-$route["login"] = "login";
-$route["mail"] = "mail";
-$route["products"] = "products";
-$route["payment"] = "payment";
-$route["pet"] = "pet";
-$route["privacy"] = "privacy";
-$route["services"] = "services";
-$route["shortCodes"] = "shortCodes";
-$route["single"] = "single";
-$route["vegetables"] = "vegetables";
 
 /* Rotas de variáveis por get */
 $route['beer-ecommerce/dash/bebida/apagar/(:any)/(:num)'] = 'beer-ecommerce/dash/bebida/apagar/$1/$2';
-
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

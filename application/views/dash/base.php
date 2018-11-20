@@ -71,16 +71,16 @@
 							<li><a href='home.php?page=configuracoes'>Configurações</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_alertar)) echo $cor_ul_alertar;?>'>
-							<li><a href='home.php?page=alertar'><i class='fa fa-exclamation-triangle icon-espaco'></i></a></li>
-							<li><a href='home.php?page=alertar'>Alertar usuários</a></li>
+							<li><a href='/beer-ecommerce/dash/alertar'><i class='fa fa-exclamation-triangle icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/alertar'>Alertar usuários</a></li>
 						</ul>
 					</div>
 
 					<div class="navigation">
 						<h3>Painel de pedidos</h3>
 						<ul class = '<?php if(isset($cor_ul_gpedidos)) echo $cor_ul_gpedidos;?>'>
-							<li><a><i class='fa fa-shopping-cart icon-espaco'></i></a></li>
-							<li><a>Gerenciar pedidos</a></li>
+							<li><a href = '/beer-ecommerce/dash/pedido'><i class='fa fa-shopping-cart icon-espaco'></i></a></li>
+							<li><a href = '/beer-ecommerce/dash/pedido'>Gerenciar pedidos</a></li>
 						</ul>
 					</div>
 
@@ -116,13 +116,6 @@
 							<li><a href = "/beer-ecommerce/dash/promocao">Gerenciar promoções</a></li>
 						</ul>
 					</div>
-					<div class="navigation">
-						<h3>Painel de estoque</h3>
-						<ul class = '<?php if(isset($cor_ul_gestoque)) echo $cor_ul_gestoque;?>'>
-							<li><a><i class='fa fa-warehouse icon-espaco'></i></a></li>
-							<li><a>Gerenciar estoque</a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
 			<!-- Left nav -->
@@ -147,8 +140,8 @@
 						</span>
 						<div class = 'dropdown-menu'>
 							<ul class = 'drop-config'>
-								<li><a class = 'dropdown-item config' href="">Editar perfil </a></li>
-								<li><a class = 'dropdown-item config' href="">Deslogar</a></li>
+								<li><a class = 'dropdown-item config'>Editar perfil </a></li>
+								<li><a class = 'dropdown-item config' id = 'deslogar'>Deslogar</a></li>
 							</ul>
 						</div>
 

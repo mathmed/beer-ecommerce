@@ -12,7 +12,7 @@
 
 <div class = "form-add-bebidas">
 
-    <?= form_open_multipart('dash/fornecedor/gravar') ?>
+    <?= form_open_multipart('dash/fornecedor/gravar', "id='form-add-fornecedor'") ?>
         <input type = 'hidden' name = 'tipo' value = 'gravar'>
         <div class = "row">
             <div class = "form-group col-md-4">
@@ -77,8 +77,8 @@
             <textarea name = "complemento" class = "form-control"></textarea>
         </div>
 
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+        <div class = "center" id = 'div-add-fornecedor'>
+            <button id = 'btn-add-fornecedor' type = "submit" class = "btn btn-adicionar"><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
         </div>
     
     <?= form_close() ?> 

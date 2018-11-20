@@ -8,9 +8,12 @@
 
 <div>
 
- <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar'>
+ <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar' id = 'form-att-promocao'>
+ 
     <input type = 'hidden' name = 'id_promocao' value = "<?= $promocao['promocao'][0]['id_promocao'] ?>">
     <input type = 'hidden' name = 'tipo' value = 'atualizar'>
+    <input type = 'hidden' name = 'status' value = "<?= $promocao['promocao'][0]['status']?>">
+
     <div class = 'row div-promocoes'>
         <div class = 'col-md-6'>
             <label>Apelido da promoção</label>
@@ -28,27 +31,28 @@
             <label>Bebidas com desconto aplicado</label>
             <select multiple='' name='bebidas_desconto[]' class='ui fluid normal dropdown' id = 'bebidas_desconto' required>
                 <option value=''>Promoções</option>
+
                 <?php
                     /* função simples para verificae se a categoria está adicionada à bebida */
                     function if_in_promocoes($bebida, $promocao){
                         foreach($promocao['relacoes'] as $key)
-                            if($key['id_tipo_bebida'] == $bebida && $promocao['promocao'][0]['id_promocao'] == $key['id_promocao']) return true;
+                            if($key['id_bebida'] == $bebida && $promocao['promocao'][0]['id_promocao'] == $key['id_promocao']) return true;
                         return false;
                     }
                     foreach($bebidas as $bebida){
 
-                        if(if_in_promocoes($bebida['id_tipo_bebida'], $promocao))
-                            echo "<option selected value = '".$bebida['id_tipo_bebida']."'>".$bebida ['nome_tipo_bebida']."</option>";
+                        if(if_in_promocoes($bebida['id_bebida'], $promocao))
+                            echo "<option selected value = '".$bebida['id_bebida']."'>".$bebida ['nome_bebida']."</option>";
                     
                         else
-                            echo "<option value = '".$bebida['id_tipo_bebida']."'>".$bebida['nome_tipo_bebida']."</option>";     
+                            echo "<option value = '".$bebida['id_bebida']."'>".$bebida['nome_bebida']."</option>";     
                     }        
                 ?>
             </select>
         </div>
     </div>
-    <div class='center div-promocoes'>
-        <button type='submit' class='btn btn-adicionar'>Atualizar</button>
+    <div class='center div-promocoes' id = 'div-att-promocao'>
+        <button type='submit' class='btn btn-adicionar' id = 'btn-att-promocao'>Atualizar</button>
     </div>
 </form>
 

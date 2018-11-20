@@ -48,6 +48,7 @@ class Promocao extends CI_Controller {
         $dados['apelido_promocao'] = $this->input->post("apelido_promocao");
         $dados['desconto'] = $this->input->post("desconto");
         $dados['bebidas_desconto'] = $this->input->post("bebidas_desconto");
+        $dados['status'] = $this->input->post("status") ? $this->input->post("status") : "checked";
     
 
         if($this->input->post("tipo") == "adicionar")
@@ -85,14 +86,11 @@ class Promocao extends CI_Controller {
 		/* verifica se foi passado um id */
         if(!$id) redirect("/");
     
-		/* Carregando os models necessários */
-        $this->load->model("dash/bebida_model", "bebida");
-
         /* carregando informações sobre a promoção */
-        $dados['promocao'] = $this->promocao->getPromocaoByID($id)[0];
+        $dados['promocao'] = $this->promocao_dao->getPromocaoByID($id)[0];
 
         /* carregando as bebidas */
-        $dados['bebidas'] = $this->bebida->getBebidas();
+        $dados['bebidas'] = $this->bebida_dao->getBebidas();
 
         $dados['cor_ul_gpromocoes'] = 'ul-marcada';
 

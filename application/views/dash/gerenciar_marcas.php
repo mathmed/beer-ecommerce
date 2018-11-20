@@ -5,15 +5,15 @@
 </div>
 
 <div class = "collapse" id = "add-marca">
-    <form method = 'POST' action = '/beer-ecommerce/dash/marca/gravar'>
+    <form method = 'POST' action = '/beer-ecommerce/dash/marca/gravar' id = 'form-add-marca'>
         <div class = "row add-marca-div">
             <div class = "col-md-5">
                 <input name = 'nome_marca' type = "text" placeholder = "Informe o nome da marca" class = "form-control">
                 <input type = 'hidden' name = 'tipo' value = 'marca'>
             </div>
 
-            <div class = "col-md-5">
-                <button type = "submit" class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Gravar</button>
+            <div class = "col-md-5" id = 'div-add-marca'>
+                <button id = 'btn-add-marca' type = "submit" class = "btn btn-adicionar"><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
             </div>
         </div>
     </form>
@@ -39,22 +39,17 @@
             </tr>
         </thead>
         <tbody>
-        <?php
-            /* Listando os dados */
+        <?php foreach($dados as $dado){ ?>
+            <tr>
+                <td class = "text-center">#<?=$dado['id_marca']?></td>
+                <td class = "text-center"><?=$dado['nome_marca']?></td>
 
-            /* listando as marcas */
-            foreach($dados as $dado){
-                echo "<tr>";
-                echo "<td class = \"text-center\">#".$dado['id_marca']."</td>";
-                echo "<td class = \"text-center\">".$dado['nome_marca']."</td>";
-
-                echo "<td class = \"text-center\">
-                        <button nome-marca =".str_replace(" ", "_", $dado['nome_marca'])." id-marca =".$dado['id_marca']." class = \"btn btn-sm btn-info editar-marca\"><i class = \"fa fa-edit\"></i></button>
-                    </td>";
-                echo "</tr>";
-            }
-
-        ?>
+                <td class = "text-center">
+                    <button nome-marca ="<?= str_replace(" ", "_", $dado['nome_marca']) ?>" id-marca ="<?=$dado['id_marca']?>" class = "btn btn-sm btn-info editar-marca"><i class = "fa fa-edit"></i></button>
+                </td>
+            </tr>
+            
+        <?php } ?>
         </tbody>
     </table>
 

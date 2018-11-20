@@ -3,8 +3,6 @@
    <a href = "/beer-ecommerce/dash/fornecedor/add"><button class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar novo fornecedor</button></a>
 </div>
 
-
-
 <div class = "filtro-bebidas">
     <p>Filtre o que deseja ver</p>
     <div class = "row row-filtro">
@@ -24,20 +22,16 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            /* listando os dados */
-            foreach($fornecedores as $fornecedor){
-                echo "<tr>";
-                    echo "<td class = 'text-center'>#".$fornecedor['id_fornecedor']."</td>";
-                    echo "<td class = 'text-center'>".$fornecedor['nome_fornecedor']."</td>";
-                    echo "
+            <?php foreach($fornecedores as $fornecedor){ ?>
+                <tr>
+                    <td class = 'text-center'>#<?=$fornecedor['id_fornecedor']?></td>
+                    <td class = 'text-center'><?=$fornecedor['nome_fornecedor']?></td>
                     <td class = 'text-center'>
-                        <a href = '/beer-ecommerce/dash/fornecedor/editar/".$fornecedor['id_fornecedor']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
-                    </td>";
-                echo "</tr>";
-            }
+                        <a href = '/beer-ecommerce/dash/fornecedor/editar/<?=$fornecedor['id_fornecedor']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                    </td>
+                </tr>
+            <?php } ?>
 
-            ?>
         </tbody>
     </table>
 

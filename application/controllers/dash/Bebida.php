@@ -130,7 +130,7 @@ class Bebida extends CI_Controller {
             $dados['id_marca'] = $this->input->post("marca");
             $dados['tipo_bebida'] = $this->input->post("tipo_bebida");
             $dados['qtd_estoque'] = $this->input->post("qtd_estoque");
-            $dados['status_bebida'] = "checked";
+            $dados['status_bebida'] = $this->input->post("status_bebida") ? $this->input->post("status_bebida") : "checked";
             $dados['img2'] = $this->input->post("img2");
             $dados['img3'] = $this->input->post("img3");
             $dados['img4'] = $this->input->post("img4");

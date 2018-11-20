@@ -48,6 +48,7 @@ class Promocao extends CI_Controller {
         $dados['apelido_promocao'] = $this->input->post("apelido_promocao");
         $dados['desconto'] = $this->input->post("desconto");
         $dados['bebidas_desconto'] = $this->input->post("bebidas_desconto");
+        $dados['status'] = $this->input->post("status") ? $this->input->post("status") : "checked";
     
 
         if($this->input->post("tipo") == "adicionar")

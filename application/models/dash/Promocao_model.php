@@ -15,7 +15,7 @@ Class Promocao_model extends CI_Model{
     public function __constructor($dados){
 
         $this->id_promocao = isset($dados['id_promocao']) ? $dados['id_promocao'] : null;
-        $this->status = isset($dados['id_promocao']) ? $dados['status'] : "checked";
+        $this->status = isset($dados['status']) ? $dados['status'] : "checked";
         $this->desconto = $dados['desconto'];
         $this->apelido_promocao = $dados['apelido_promocao'];
         $this->bebidas_desconto = $dados['bebidas_desconto'];

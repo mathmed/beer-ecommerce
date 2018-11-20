@@ -9,8 +9,11 @@
 <div>
 
  <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar' id = 'form-att-promocao'>
+ 
     <input type = 'hidden' name = 'id_promocao' value = "<?= $promocao['promocao'][0]['id_promocao'] ?>">
     <input type = 'hidden' name = 'tipo' value = 'atualizar'>
+    <input type = 'hidden' name = 'status' value = "<?= $promocao['promocao'][0]['status']?>">
+
     <div class = 'row div-promocoes'>
         <div class = 'col-md-6'>
             <label>Apelido da promoção</label>

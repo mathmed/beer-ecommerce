@@ -18,7 +18,8 @@
         <input type = "hidden" name = "tipo" value = "bebida"> 
         <input type = "hidden" name = "id_bebida" value = "<?= $bebida['id_bebida'] ?>">
         <input type = "hidden" name = "qtd_estoque" value = "<?= $bebida['qtd_estoque'] ?>">
-        
+        <input type = "hidden" name = "status_bebida" value = "<?= $bebida['status_bebida'] ?>">
+
         <div class = "form-group">
             <label>Nome da bebida</label>
             <input value = "<?= $bebida['nome_bebida'];?>" name = "nome_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>

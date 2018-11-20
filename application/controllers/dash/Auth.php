@@ -8,7 +8,7 @@ class Auth extends CI_Controller {
     public function __construct(){
         /* carregando os DAO's necessários */
         parent::__construct();
-        $this->load->dao("auth_dao", "", TRUE);;
+        $this->load->dao("auth_dao", "", TRUE);
     }
 	
 	/* primeira função que é chamada */

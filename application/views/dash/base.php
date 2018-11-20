@@ -71,8 +71,8 @@
 							<li><a href='home.php?page=configuracoes'>Configurações</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_alertar)) echo $cor_ul_alertar;?>'>
-							<li><a href='home.php?page=alertar'><i class='fa fa-exclamation-triangle icon-espaco'></i></a></li>
-							<li><a href='home.php?page=alertar'>Alertar usuários</a></li>
+							<li><a href='/beer-ecommerce/dash/alertar'><i class='fa fa-exclamation-triangle icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/alertar'>Alertar usuários</a></li>
 						</ul>
 					</div>
 

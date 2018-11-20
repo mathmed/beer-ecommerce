@@ -13,7 +13,7 @@
 
 <div class = "form-add-bebidas">
 
-    <?= form_open_multipart('dash/bebida/gravar') ?>
+    <?= form_open_multipart('dash/bebida/gravar', "id='form-editar-bebida'") ?>
         <input type = "hidden" name = "acao_bebida" value = "editar"> 
         <input type = "hidden" name = "tipo" value = "bebida"> 
         <input type = "hidden" name = "id_bebida" value = "<?= $bebida['id_bebida'] ?>">
@@ -95,8 +95,8 @@
             ?>
 
         </div>        
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Atualizar</button>
+        <div class = "center" id = 'div-editar-bebida'>
+            <button id = 'btn-editar-bebida' type = "submit" class = "btn btn-adicionar">Atualizar</button>
         </div>
         
         <?= form_close() ?> 

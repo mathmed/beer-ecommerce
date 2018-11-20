@@ -1,20 +1,18 @@
 <?= $this->session->flashdata('gravar_dados_bebidas');?>
 
 <div>
-   <button data-toggle = "collapse" data-target = "#add-categoria" class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar nova categoria</button>
+   <button data-toggle = "collapse" data-target = "#add-categoria" class = "btn btn-adicionar"><i class = "icon-espaco fa fa-plus"></i>Adicionar nova categoria</button>
 </div>
 
 <div class = "collapse" id = "add-categoria">
-    <form method = "POST" action = "/beer-ecommerce/dash/categoria/gravar">
+    <form method = "POST" action = "/beer-ecommerce/dash/categoria/gravar" id = 'form-add-categoria'>
         <div class = "row add-marca-div">
             <div class = "col-md-4">
-                <label>Descrição da categoria</label>
                 <input name = "descricao_categoria" type = "text" placeholder = "Informe o nome da categoria" class = "form-control" required>
             </div>
 
-            <div class = "col-md-5">
-                <label>Clique em gravar para confirmar</label>
-                <input type = "submit" class = "btn btn-adicionar form-control" value = "Gravar">
+            <div class = "col-md-5" id = 'div-add-categoria'>
+                <button id = 'btn-add-categoria' type = "submit" class = "btn btn-adicionar form-control"><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
             </div>
         </div>
     </form>

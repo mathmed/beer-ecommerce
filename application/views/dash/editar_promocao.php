@@ -8,7 +8,7 @@
 
 <div>
 
- <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar'>
+ <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar' id = 'form-att-promocao'>
     <input type = 'hidden' name = 'id_promocao' value = "<?= $promocao['promocao'][0]['id_promocao'] ?>">
     <input type = 'hidden' name = 'tipo' value = 'atualizar'>
     <div class = 'row div-promocoes'>
@@ -48,8 +48,8 @@
             </select>
         </div>
     </div>
-    <div class='center div-promocoes'>
-        <button type='submit' class='btn btn-adicionar'>Atualizar</button>
+    <div class='center div-promocoes' id = 'div-att-promocao'>
+        <button type='submit' class='btn btn-adicionar' id = 'btn-att-promocao'>Atualizar</button>
     </div>
 </form>
 

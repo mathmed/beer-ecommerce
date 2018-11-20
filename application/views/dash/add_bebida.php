@@ -12,7 +12,7 @@
 
 <div class = "form-add-bebidas">
 
-    <?= form_open_multipart('dash/bebida/gravar') ?>
+    <?= form_open_multipart("dash/bebida/gravar", "id ='form-add-bebida'") ?>
 
         <input type = "hidden" name = "tipo" value = "bebida">
         <input type = "hidden" name = "acao_bebida" value = "gravar"> 
@@ -83,8 +83,8 @@
             <input name = "img4" type = 'file' class = "form-control" required>
         </div>
 
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+        <div class = "center" id = "div-add-bebida">
+            <button id = "btn-add-bebida" type = "submit" class = "btn btn-adicionar">Gravar</button>
         </div>
         
         <?= form_close() ?> 

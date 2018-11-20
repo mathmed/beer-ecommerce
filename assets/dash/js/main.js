@@ -189,6 +189,56 @@ $(document).ready(function(){
 
     /* chamando função para deslogar do sistema */
     $("#deslogar").click(function(){window.location = "/beer-ecommerce/dash/auth/deslogar"})
-               
+    
+    
+    /* Funções para adicinar spinner após o clique */
+    $("#form-add-bebida").submit(function(){
+        $("#btn-add-bebida").remove();
+        $("#div-add-bebida").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
 
+    $("#form-editar-bebida").submit(function(){
+        $("#btn-editar-bebida").remove();
+        $("#div-editar-bebida").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-estoque").submit(function(){
+        $("#btn-add-estoque").remove();
+        $("#div-add-estoque").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-remover-estoque").submit(function(){
+        $("#btn-remover-estoque").remove();
+        $("#div-remover-estoque").append("<i class='fas fa-spinner fa-pulse custom-spinner-red'></i>");
+    })
+
+    $("#form-add-marca").submit(function(){
+        $("#btn-add-marca").remove();
+        $("#div-add-marca").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-categoria").submit(function(){
+        $("#btn-add-categoria").remove();
+        $("#div-add-categoria").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-fornecedor").submit(function(){
+        $("#btn-add-fornecedor").remove();
+        $("#div-add-fornecedor").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-att-fornecedor").submit(function(){
+        $("#btn-att-fornecedor").remove();
+        $("#div-att-fornecedor").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-promocao").submit(function(){
+        $("#btn-add-promocao").remove();
+        $("#div-add-promocao").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-att-promocao").submit(function(){
+        $("#btn-att-promocao").remove();
+        $("#div-att-promocao").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
 }); 

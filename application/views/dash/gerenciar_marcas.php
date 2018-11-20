@@ -5,15 +5,15 @@
 </div>
 
 <div class = "collapse" id = "add-marca">
-    <form method = 'POST' action = '/beer-ecommerce/dash/marca/gravar'>
+    <form method = 'POST' action = '/beer-ecommerce/dash/marca/gravar' id = 'form-add-marca'>
         <div class = "row add-marca-div">
             <div class = "col-md-5">
                 <input name = 'nome_marca' type = "text" placeholder = "Informe o nome da marca" class = "form-control">
                 <input type = 'hidden' name = 'tipo' value = 'marca'>
             </div>
 
-            <div class = "col-md-5">
-                <button type = "submit" class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Gravar</button>
+            <div class = "col-md-5" id = 'div-add-marca'>
+                <button id = 'btn-add-marca' type = "submit" class = "btn btn-adicionar"><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
             </div>
         </div>
     </form>

@@ -3,7 +3,17 @@
 .icon-espaco {
 	margin-right: 8px;
 }
-	
+
+.label {
+	font-size: 12px;
+	font-weight: bold;
+	color: grey;
+}
+
+.margin-top {
+	margin-top: 10px;
+}
+
 #deslogar {
     cursor: pointer;
 }

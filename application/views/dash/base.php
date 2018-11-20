@@ -79,8 +79,8 @@
 					<div class="navigation">
 						<h3>Painel de pedidos</h3>
 						<ul class = '<?php if(isset($cor_ul_gpedidos)) echo $cor_ul_gpedidos;?>'>
-							<li><a><i class='fa fa-shopping-cart icon-espaco'></i></a></li>
-							<li><a>Gerenciar pedidos</a></li>
+							<li><a href = '/beer-ecommerce/dash/pedido'><i class='fa fa-shopping-cart icon-espaco'></i></a></li>
+							<li><a href = '/beer-ecommerce/dash/pedido'>Gerenciar pedidos</a></li>
 						</ul>
 					</div>
 

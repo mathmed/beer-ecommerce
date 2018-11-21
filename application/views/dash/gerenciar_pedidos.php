@@ -39,7 +39,7 @@
                 <td class="text-center">Saiu para entrega</td>
 
                 <td class="text-center">
-                    <a href = '/beer-ecommerce/dash/promocao/editar/<?=$promocao['id_promocao']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                    <a href = '/beer-ecommerce/dash/pedido/editar/3'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
                 </td>
            </tr>
 
@@ -51,7 +51,7 @@
                 <td class="text-center">Pagamento em análise</td>
 
                 <td class="text-center">
-                    <a href = '/beer-ecommerce/dash/promocao/editar/<?=$promocao['id_promocao']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                    <a href = '/beer-ecommerce/dash/pedido/editar/2'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
                 </td>
 
            </tr>

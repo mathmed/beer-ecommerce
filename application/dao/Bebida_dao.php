@@ -16,7 +16,7 @@ Class Bebida_dao extends MY_Dao{
     }
 
     /* função para retornar todas as bebidas do estoque (ou algumas em caso de filtro) */
-    public function getBebidas($categoria){
+    public function getBebidas($categoria = NULL){
 
         /* iniciando as query das bebidas */
         if($categoria == NULL){

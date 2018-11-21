@@ -15,7 +15,6 @@ class Bebida extends CI_Controller {
         $this->load->dao("categoria_dao", "", TRUE);
     
     }
-    
 	
 	/* primeira função que é chamada */
 	public function index(){
@@ -24,7 +23,7 @@ class Bebida extends CI_Controller {
         if(!$this->session->has_userdata("adm")) redirect("/");
 
         /* carrega os dados para renderizar a página */
-        $dados['bebidas'] = $this->bebida_dao->getBebidas(); 
+        $dados['bebidas'] = $this->bebida_dao->getBebidas(NULL); 
 
         /* dados que serão passados como parâmetro */
         /* enviando como parâmetro a cor da ul */
@@ -35,7 +34,6 @@ class Bebida extends CI_Controller {
         $this->load->view("dash/gerenciar_bebidas.php", $dados);
 
     }
-
 
     /* função para carregar a página de adição de uma nova bebida */
     public function add_bebida(){

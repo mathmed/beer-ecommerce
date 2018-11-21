@@ -29,6 +29,19 @@ class Pedido extends CI_Controller {
 
     }
 
+    /* função para carregar a página de gerenciamento de um pedido */
+    public function editar($id = NULL){
+
+        /* verifica se o usuários está logado e foi passado um id */
+		if(!$this->session->has_userdata("adm")) redirect("/");
+        
+        /* enviando como parâmetro a cor da ul */
+        $dados['cor_ul_pedidos'] = 'ul-marcada';
+
+        /* carregando as views */
+        $this->load->view("dash/base.php", $dados);
+		$this->load->view("dash/editar_pedido.php", $dados);
+    }
     
 }
 

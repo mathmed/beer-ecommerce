@@ -200,7 +200,7 @@ $(document).ready(function(){
 <script>
 		paypal.minicart.render();
 
-		paypal.minicart.cart.on('checkout', function (evt) {
+		paypal.minicart.cart.on('<?=base_url("assets/public/checkout")?>', function (evt) {
 			var items = this.items(),
 				len = items.length,
 				total = 0,

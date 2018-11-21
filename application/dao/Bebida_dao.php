@@ -16,30 +16,58 @@ Class Bebida_dao extends MY_Dao{
     }
 
     /* função para retornar todas as bebidas do estoque (ou algumas em caso de filtro) */
-    public function getBebidas(){
+    public function getBebidas($categoria){
 
         /* iniciando as query das bebidas */
-        $this->db->select("*");
-        $this->db->from("bebida");
-        $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
+        if($categoria == NULL){
+            $this->db->select("*");
+            $this->db->from("bebida");
+            $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
 
-        $bebidas = $this->db->get();
+            $bebidas = $this->db->get();
 
-        /* Verificando se retornou algo e guardando o resultado */
-        if($bebidas) $bebidas->result_array();
-        $bebidas = $bebidas->result_array;
-        
-        /* Código para verificação de quantidade de bebidas em estoque */
-        for($i = 0; $i < count($bebidas); $i++){
-        
-            $em_estoque = $bebidas[$i]['qtd_estoque'];
+            /* Verificando se retornou algo e guardando o resultado */
+            if($bebidas) $bebidas->result_array();
+            $bebidas = $bebidas->result_array;
+            
+            /* Código para verificação de quantidade de bebidas em estoque */
+            for($i = 0; $i < count($bebidas); $i++){
+            
+                $em_estoque = $bebidas[$i]['qtd_estoque'];
 
-            /* verificando a cor da linha do estoque */
-            if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
-            else if($em_estoque < 50) $bebidas[$i]["cor_estoque"] = "estoque-laranja";
-            else $bebidas[$i]["cor_estoque"] = "estoque-verde";
-        
+                /* verificando a cor da linha do estoque */
+                if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
+                else if($em_estoque < 50) $bebidas[$i]["cor_estoque"] = "estoque-laranja";
+                else $bebidas[$i]["cor_estoque"] = "estoque-verde";
+            
+            }
+        }else{
+            $this->db->select("*");
+            $this->db->from("bebida");
+            $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
+            $this->db->join("tipo_bebida_has_categoria", "tipo_bebida_has_categoria.id_bebida = bebida.id_bebida", "inner");
+            $this->db->join("categoria", "categoria.id_categoria = tipo_bebida_has_categoria.id_categoria", "inner");
+            $this->db->where("categoria.descricao_categoria", $categoria);
+
+            $bebidas = $this->db->get();
+
+            /* Verificando se retornou algo e guardando o resultado */
+            if($bebidas) $bebidas->result_array();
+            $bebidas = $bebidas->result_array;
+            
+            /* Código para verificação de quantidade de bebidas em estoque */
+            for($i = 0; $i < count($bebidas); $i++){
+            
+                $em_estoque = $bebidas[$i]['qtd_estoque'];
+
+                /* verificando a cor da linha do estoque */
+                if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
+                else if($em_estoque < 50) $bebidas[$i]["cor_estoque"] = "estoque-laranja";
+                else $bebidas[$i]["cor_estoque"] = "estoque-verde";
+            
+            }
         }
+        
 
         /* retornando o array */
         return $bebidas;

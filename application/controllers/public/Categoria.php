@@ -13,8 +13,9 @@ Class Categoria extends CI_Controller{
         $this->load->dao("bebida_dao", "", TRUE);
     }
 
-    public function index(){
-        $data["nome_categoria"] = $_GET["categoria"];
+    public function index($categoria = NULL){
+
+        $data["nome_categoria"] = $categoria;
         $data["dados"] = $this->categoria_dao->getCategorias();
         $data["categoria"] = $this->bebida_dao->getBebidas($data["nome_categoria"]);
         $this->load->view("public/header.php");

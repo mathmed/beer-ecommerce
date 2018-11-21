@@ -15,7 +15,7 @@
 
 
 	<!-- Custom CSS -->
-	<link href="<?= base_url("assets/dash/css/home.css") ?>" rel="stylesheet" type="text/css" media="all"/>
+	<link href="<?= base_url("assets/dash/css/my_styles.css") ?>" rel="stylesheet" type="text/css" media="all"/>
 	
 
 	<!-- JAVA SCRIPT FILES -->

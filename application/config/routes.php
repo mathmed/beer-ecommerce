@@ -50,6 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+/* Reescrevendo rotas */
+$route['events'] = "public/events";
+
 /* redirecinamento para a tela pública */
 $route['default_controller'] = "public/home";
 
@@ -57,9 +60,11 @@ $route['default_controller'] = "public/home";
 $route['dash'] = "dash/auth";
 
 
-
 /* Rotas de variáveis por get */
 $route['beer-ecommerce/dash/bebida/apagar/(:any)/(:num)'] = 'beer-ecommerce/dash/bebida/apagar/$1/$2';
+$route['categoria/(:any)'] = 'public/categoria/index/$1';
+
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

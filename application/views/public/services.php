@@ -2,7 +2,7 @@
 	<div class="products-breadcrumb">
 		<div class="container">
 			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/index">Home</a><span>|</span></li>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/home">Home</a><span>|</span></li>
 				<li>Services</li>
 			</ul>
 		</div>
@@ -25,7 +25,7 @@
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<?php foreach($dados as $dado){ ?>
-							<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
+							<li><a href="/beer-ecommerce/categoria/<?= $dado['descricao_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
@@ -69,7 +69,7 @@
 						<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>similique sunt in culpa qui officia deserunt</li>
 						<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>odio dignissimos ducimus qui blanditiis</li>
 					</ul>
-					<a href="/beer-ecommerce/public/single">Shop Now</a>
+					<a href="/beer-ecommerce/single">Shop Now</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

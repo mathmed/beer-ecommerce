@@ -52,6 +52,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /* Reescrevendo rotas */
 $route['events'] = "public/events";
+$route['products'] = "public/products";
+$route['checkout'] = "public/checkout";
+$route['faqs'] = "public/faqs";
+$route['payment'] = "public/payment";
+$route['services'] = "public/services";
+$route['single'] = "public/single";
+$route['shortCodes'] = "public/shortCodes";
+$route['privacy'] = "public/privacy";
+$route['mail'] = "public/mail";
+$route['login'] = "public/login";
+$route['about'] = "public/about";
+$route['household'] = "public/household";
+$route['kitchen'] = "public/kitchen";
+$route['home'] = "public/home";
+
+
+
+
 
 /* redirecinamento para a tela pública */
 $route['default_controller'] = "public/home";

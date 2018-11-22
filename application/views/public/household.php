@@ -2,7 +2,7 @@
 <div class="products-breadcrumb">
 	<div class="container">
 		<ul>
-			<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/home">Home</a><span>|</span></li>
+			<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/home">Home</a><span>|</span></li>
 			<li>Households</li>
 		</ul>
 	</div>
@@ -25,7 +25,7 @@
 			<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 				<ul class="nav navbar-nav nav_1">
 					<?php foreach($dados as $dado){ ?>
-						<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
+						<li><a href="/beer-ecommerce/categoria/<?= $dado['descricao_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 					<?php } ?>
 				</ul>
 				</div><!-- /.navbar-collapse -->
@@ -49,7 +49,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/17.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/17.png")?>" alt=" " class="img-responsive" /></a>
 										<p>dishwash gel, lemon  (1.5 ltr)</p>
 										<h4>$8.00 <span>$10.00</span></h4>
 									</div>
@@ -85,7 +85,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/18.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/18.png")?>" alt=" " class="img-responsive" /></a>
 										<p>dish wash bar (500 gm)</p>
 										<h4>$2.00 <span>$4.00</span></h4>
 									</div>
@@ -121,7 +121,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/19.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/19.png")?>" alt=" " class="img-responsive" /></a>
 										<p>air freshener (50 gm)</p>
 										<h4>$3.00 <span>$5.00</span></h4>
 									</div>
@@ -157,7 +157,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/20.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/20.png")?>" alt=" " class="img-responsive" /></a>
 										<p>toilet cleaner expert (1 ltr)</p>
 										<h4>$6.00 <span>$7.00</span></h4>
 									</div>
@@ -197,7 +197,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/21.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/21.png")?>" alt=" " class="img-responsive" /></a>
 										<p>princeware packaging container pack (6 no's)</p>
 										<h4>$8.00 <span>$10.00</span></h4>
 									</div>
@@ -233,7 +233,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/22.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/22.png")?>" alt=" " class="img-responsive" /></a>
 										<p>signoraware container center press (900 ml)</p>
 										<h4>$5.00 <span>$8.00</span></h4>
 									</div>
@@ -267,7 +267,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/23.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/23.png")?>" alt=" " class="img-responsive" /></a>
 										<p>ship stainless steel sauce pan single (1 pc)</p>
 										<h4>$6.00 <span>$8.00</span></h4>
 									</div>
@@ -303,7 +303,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/24.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/24.png")?>" alt=" " class="img-responsive" /></a>
 										<p>omega stainless steel puri dabba (1 pc)</p>
 										<h4>$6.00 <span>$8.00</span></h4>
 									</div>
@@ -343,7 +343,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/25.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/25.png")?>" alt=" " class="img-responsive" /></a>
 										<p>food for adult dogs (80 gms)</p>
 										<h4>$3.00 <span>$4.00</span></h4>
 									</div>
@@ -379,7 +379,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/26.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/26.png")?>" alt=" " class="img-responsive" /></a>
 										<p>young adult dogs (1.2 kg)</p>
 										<h4>$6.00 <span>$10.00</span></h4>
 									</div>
@@ -413,7 +413,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/27.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/27.png")?>" alt=" " class="img-responsive" /></a>
 										<p>cat food ocean fish (1.4 kg)</p>
 										<h4>$6.00 <span>$7.00</span></h4>
 									</div>
@@ -449,7 +449,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/28.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/28.png")?>" alt=" " class="img-responsive" /></a>
 										<p>chicken in jelly can (400 gm)</p>
 										<h4>$7.00 <span>$9.00</span></h4>
 									</div>

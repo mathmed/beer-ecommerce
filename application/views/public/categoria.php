@@ -2,8 +2,8 @@
 <div class="products-breadcrumb">
 		<div class="container">
 			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/index">Home</a><span>|</span></li>
-				<li><?php echo $nome_categoria; ?></li>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/home">Home</a><span>|</span></li>
+				<li><?= $nome_categoria; ?></li>
 			</ul>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<?php foreach($dados as $dado){ ?>
-							<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
+							<li><a href="/beer-ecommerce/categoria/<?= $dado['descricao_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
@@ -38,7 +38,7 @@
 				<a href="/beer-ecommerce/public/single">Shop Now</a>
 			</div>
 			<div class="w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub">
-				<h3 class="w3l_fruit"><?php echo $nome_categoria; ?></h3>
+				<h3 class="w3l_fruit"><?= $nome_categoria; ?></h3>
 				<div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
 
                     <?php foreach($categoria as $item){ ?>
@@ -53,8 +53,8 @@
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
                                                 <a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
-                                                <p><?php echo $item['nome_bebida']; ?></p>
-                                                <h4>R$ <?php echo $item['preco_bebida']; ?><span>$10.00</span></h4>
+                                                <p><?= $item['nome_bebida']; ?></p>
+                                                <h4>R$ <?= $item['preco_bebida']; ?><span>$10.00</span></h4>
                                             </div>
                                             <div class="snipcart-details">
                                                 <form action="#" method="post">
@@ -62,8 +62,8 @@
                                                         <input type="hidden" name="cmd" value="_cart" />
                                                         <input type="hidden" name="add" value="1" />
                                                         <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="<?php echo $item['nome_bebida']; ?>" />
-                                                        <input type="hidden" name="amount" value="<?php echo $item['preco_bebida']; ?>" />
+                                                        <input type="hidden" name="item_name" value="<?= $item['nome_bebida']; ?>" />
+                                                        <input type="hidden" name="amount" value="<?= $item['preco_bebida']; ?>" />
                                                         <input type="hidden" name="discount_amount" value="1.00" />
                                                         <input type="hidden" name="currency_code" value="USD" />
                                                         <input type="hidden" name="return" value=" " />

@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class = "collapse" id = "collapse-estoque">
+<div class = "collapse margin-top" id = "collapse-estoque">
     <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar" id = 'form-add-estoque'>
         <input type = "hidden" name = 'tipo' value = "estoque-add">
         <input type = "hidden" name = 'id_bebida' value = "<?=$bebida['id_bebida']?>">
@@ -45,7 +45,7 @@
     </form>
 </div>
 
-<div class = "collapse" id = "collapse-remove">
+<div class = "collapse margin-top" id = "collapse-remove">
     <form method = "POST" action = "/beer-ecommerce/dash/bebida/gravar" id = 'form-remover-estoque'>
         <input type = "hidden" name = 'tipo' value = "estoque-remove">
         <input type = "hidden" name = 'id_bebida' value = "<?=$bebida['id_bebida']?>">

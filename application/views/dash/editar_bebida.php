@@ -11,7 +11,7 @@
 
 </div>
 
-<div class = "form-add-bebidas">
+<div class = "form-add-bebidas margin-top">
 
     <?= form_open_multipart('dash/bebida/gravar', "id='form-editar-bebida'") ?>
         <input type = "hidden" name = "acao_bebida" value = "editar"> 

@@ -3,14 +3,14 @@
    <a href = "/beer-ecommerce/dash/fornecedor/add"><button class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar novo fornecedor</button></a>
 </div>
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "margin-top">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-8"><input id = "filtro-fornecedor" class = "form-control" placeholder = "Pesquise o nome ou ID do fornecedor"></div>
     </div>
 </div>
 
-<div class = "bebidas">
+<div class = "bebidas margin-top">
 
     <table class="table table-bordered" id = "tabela-fornecedores">
             

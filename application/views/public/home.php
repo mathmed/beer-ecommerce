@@ -15,7 +15,7 @@
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<?php foreach($dados as $dado){ ?>
-							<li><a href="/beer-ecommerce/categoria/<?= $dado['descricao_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
+							<li><a href="/beer-ecommerce/public/categoria/<?= $dado['descricao_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
@@ -29,7 +29,7 @@
 							<div class="w3l_banner_nav_right_banner">
 								<h3>Make your <span>food</span> with Spicy.</h3>
 								<div class="more">
-									<a href="/beer-ecommerce/public/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="/beer-ecommerce/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 								</div>
 							</div>
 						</li>
@@ -37,7 +37,7 @@
 							<div class="w3l_banner_nav_right_banner1">
 								<h3>Make your <span>food</span> with Spicy.</h3>
 								<div class="more">
-									<a href="/beer-ecommerce/public/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="/beer-ecommerce/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 								</div>
 							</div>
 						</li>
@@ -45,7 +45,7 @@
 							<div class="w3l_banner_nav_right_banner2">
 								<h3>upto <i>50%</i> off.</h3>
 								<div class="more">
-									<a href="/beer-ecommerce/public/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="/beer-ecommerce/products" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 								</div>
 							</div>
 						</li>
@@ -115,7 +115,7 @@
 								<figure>
 									<div class="snipcart-item block" >
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/1.png")?>" /></a>		
+											<a href="/beer-ecommerce/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/1.png")?>" /></a>		
 											<p>fortune sunflower oil</p>
 											<h4>$7.99 <span>$10.00</span></h4>
 										</div>
@@ -150,7 +150,7 @@
 								<figure>
 									<div class="snipcart-item block" >
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/3.png")?>" /></a>		
+											<a href="/beer-ecommerce/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/3.png")?>" /></a>		
 											<p>basmati rise (5 Kg)</p>
 											<h4>$11.99 <span>$15.00</span></h4>
 										</div>
@@ -180,13 +180,13 @@
 					<div class="hover14 column">
 						<div class="agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="<?=base_url("assets/public/images/offer.png")?>" alt=" " class="img-responsive" />
+								<img src="<?=base_url("assets/images/offer.png")?>" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/2.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/2.png")?>" alt=" " class="img-responsive" /></a>
 											<p>Pepsi soft drink (2 Ltr)</p>
 											<h4>$8.00 <span>$10.00</span></h4>
 										</div>
@@ -216,13 +216,13 @@
 					<div class="hover14 column">
 						<div class="agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="<?=base_url("assets/public/images/offer.png")?>" alt=" " class="img-responsive" />
+								<img src="<?=base_url("assets/images/offer.png")?>" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/4.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/4.png")?>" alt=" " class="img-responsive" /></a>
 											<p>dogs food (4 Kg)</p>
 											<h4>$9.00 <span>$11.00</span></h4>
 										</div>

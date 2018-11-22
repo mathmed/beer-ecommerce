@@ -20,29 +20,29 @@
 			<div class="col-md-3 w3_footer_grid">
 				<h3>information</h3>
 				<ul class="w3_footer_grid_list">
-					<li><a href="/beer-ecommerce/public/events">Events</a></li>
-					<li><a href="/beer-ecommerce/public/about">About Us</a></li>
-					<li><a href="/beer-ecommerce/public/products">Best Deals</a></li>
-					<li><a href="/beer-ecommerce/public/services">Services</a></li>
-					<li><a href="/beer-ecommerce/public/short-codes">Short Codes</a></li>
+					<li><a href="/beer-ecommerce/events">Events</a></li>
+					<li><a href="/beer-ecommerce/about">About Us</a></li>
+					<li><a href="/beer-ecommerce/products">Best Deals</a></li>
+					<li><a href="/beer-ecommerce/services">Services</a></li>
+					<li><a href="/beer-ecommerce/short-codes">Short Codes</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
 				<h3>policy info</h3>
 				<ul class="w3_footer_grid_list">
-					<li><a href="/beer-ecommerce/public/faqs">FAQ</a></li>
-					<li><a href="/beer-ecommerce/public/privacy">privacy policy</a></li>
-					<li><a href="/beer-ecommerce/public/privacy">terms of use</a></li>
+					<li><a href="/beer-ecommerce/faqs">FAQ</a></li>
+					<li><a href="/beer-ecommerce/privacy">privacy policy</a></li>
+					<li><a href="/beer-ecommerce/privacy">terms of use</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
 				<h3>what in stores</h3>
 				<ul class="w3_footer_grid_list">
-					<li><a href="/beer-ecommerce/public/pet">Pet Food</a></li>
-					<li><a href="/beer-ecommerce/public/frozen">Frozen Snacks</a></li>
-					<li><a href="/beer-ecommerce/public/kitchen">Kitchen</a></li>
-					<li><a href="/beer-ecommerce/public/products">Branded Foods</a></li>
-					<li><a href="/beer-ecommerce/public/household">Households</a></li>
+					<li><a href="/beer-ecommerce/pet">Pet Food</a></li>
+					<li><a href="/beer-ecommerce/frozen">Frozen Snacks</a></li>
+					<li><a href="/beer-ecommerce/kitchen">Kitchen</a></li>
+					<li><a href="/beer-ecommerce/products">Branded Foods</a></li>
+					<li><a href="/beer-ecommerce/household">Households</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">

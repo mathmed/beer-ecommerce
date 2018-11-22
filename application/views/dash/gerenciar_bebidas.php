@@ -4,9 +4,9 @@
     <a href = "/beer-ecommerce/dash/bebida/add_bebida"><button class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar nova bebida</button></a>
 </div>
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "margin-top">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-3"><input id = "filtro-nome" class = "form-control" placeholder = "Nome do produto"></div>
         <div class = "col-md-3">
             <select class = "form-control" name = 'filtro-preco'>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class = "row row-filtro">
+    <div class = "row margin-top">
         <div class = "col-md-3">   
             <select class = "form-control">
                 <option>Todas as marcas</option>
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<div class = "bebidas">
+<div class = "bebidas margin-top">
 
     <table class="table table-bordered" id = "tabela-bebidas">
             
@@ -102,33 +102,27 @@
         </thead>
         <tbody>
 
-            <?php
-                /* listando os dados */
-                foreach($bebidas as $bebida){
+            <?php foreach($bebidas as $bebida){ ?>
 
-                    echo "<tr>";
-                    echo "<td class = 'text-center'>#".$bebida['id_tipo_bebida']."</td>";
-                    echo "<td class = 'text-center td-nome'>".$bebida['nome_tipo_bebida']."</td>";
-                    echo "<td class = 'text-center'>".$bebida['tipo_bebida']."</td>";
-                    echo "<td class = 'text-center'> R$ ".$bebida['preco_bebida']."</td>";
-                    echo "<td class = 'text-center'>".$bebida['ml']."</td>";
-                    echo "<td class = 'text-center'>".$bebida['teor_alcoolico']."%</td>";
-                    echo "<td class = 'text-center'>".$bebida['nome_marca']."</td>";
-                    echo "<td class = 'text-center ".$bebida['cor_estoque']."'>".$bebida['em_estoque']."</td>";
-                    echo "
-                        <td class = 'text-center'>
-                            <input id-bebida = '".$bebida['id_tipo_bebida']."' class = 'toggle-status-bebida' type='checkbox' data-on='Ativada' data-off='Desativada' ".($bebida['status_tipo_bebida'])." data-toggle='toggle' data-onstyle='success' data-offstyle='danger' status = '".($bebida['status_tipo_bebida'])."'>
-                        </td>";
-                    echo "
+                <tr>
+                    <td class = 'text-center'>#<?= $bebida['id_bebida'] ?></td>
+                    <td class = 'text-center td-nome'><?= $bebida['nome_bebida'] ?></td>
+                    <td class = 'text-center'><?= $bebida['tipo_bebida'] ?></td>
+                    <td class = 'text-center'>R$ <?= $bebida['preco_bebida'] ?></td>
+                    <td class = 'text-center'> <?= $bebida['ml'] ?></td>
+                    <td class = 'text-center'><?= $bebida['teor_alcoolico']?>%</td>
+                    <td class = 'text-center'><?=$bebida['nome_marca']?></td>
+                    <td class = 'text-center <?= $bebida['cor_estoque']?>'><?=$bebida['qtd_estoque']?></td>
                     <td class = 'text-center'>
-                        <a href = '/beer-ecommerce/dash/bebida/editar/".$bebida['id_tipo_bebida']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
-                    </td>";
+                        <input id-bebida = '<?=$bebida['id_bebida']?>' class = 'toggle-status-bebida' type='checkbox' data-on='Ativada' data-off='Desativada' <?= $bebida['status_bebida'] ?> data-toggle='toggle' data-onstyle='success' data-offstyle='danger' status = '<?= $bebida['status_bebida'] ?>'>
+                    </td>
+                    
+                    <td class = 'text-center'>
+                        <a href = '/beer-ecommerce/dash/bebida/editar/<?=$bebida['id_bebida']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                    </td>
+                </tr>
 
-                    echo "</tr>";
-
-                }
-            ?>
-
+                <?php } ?>
 
         </tbody>
     </table>

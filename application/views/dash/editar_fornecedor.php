@@ -11,9 +11,9 @@
 </div>
 
 
-<div class = "editar-fornecedor">
+<div class = "editar-fornecedor margin-top">
 
-<?= form_open_multipart('dash/fornecedor/gravar') ?>
+<?= form_open_multipart('dash/fornecedor/gravar', "id='form-att-fornecedor'") ?>
     <input type = 'hidden' name = 'id_fornecedor' value = '<?= $fornecedor[0]['id_fornecedor'] ?>'>
     <input type = 'hidden' name = 'id_contato' value = '<?= $fornecedor[0]['id_contato'] ?>'>
     <input type = 'hidden' name = 'id_endereco' value = '<?= $fornecedor[0]['id_endereco'] ?>'>
@@ -81,14 +81,39 @@
         <textarea name = "complemento" class = "form-control"><?= $fornecedor[0]['complemento'] ?></textarea>
     </div>
 
-    <div class = "center">
-        <button type = "submit" class = "btn btn-adicionar">Atualizar</button>
+    <div class = "center" id = 'div-att-fornecedor'>
+        <button type = "button" class = "btn btn-voltar" data-toggle = 'modal' data-target = "#deletar-fornecedor">Deletar</button>
+        <button id = 'btn-att-fornecedor' type= "submit" class = "btn btn-adicionar margin-left">Atualizar</button>
     </div>
 
 <?= form_close() ?>
 
 </div>
 
+<div class="modal" tabindex="-1" role="dialog" id = "deletar-fornecedor">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Atenção!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja deletar esse fornecedor? Após deletado não poderá ser recuperado</p>
+      </div>
+      <div class="modal-footer">
+        <form method = "POST" action = "/beer-ecommerce/dash/fornecedor/deletar">
+            <input type = 'hidden' name = 'id_fornecedor' value = '<?= $fornecedor[0]['id_fornecedor'] ?>'>
+            <input type = 'hidden' name = 'id_contato' value = '<?= $fornecedor[0]['id_contato'] ?>'>
+            <input type = 'hidden' name = 'id_endereco' value = '<?= $fornecedor[0]['id_endereco'] ?>'>
+            <button type="submit" class="btn btn-voltar margin-left">Deletar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 

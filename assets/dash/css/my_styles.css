@@ -1,7 +1,63 @@
+/* ESTILOS GENÉRICOS */
+
+.label {
+	font-size: 12px;
+	font-weight: bold;
+	color: grey;
+}
+.content {
+	margin: 0 30px 0 0;
+}
+
+.margin-top {margin-top: 20px;}
+.margin-bottom {margin-bottom: 20px;}
+.margin-left {margin-left: 20px;}
+.margin {margin:20px;}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.hidden{
+	display: none;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	color: grey;
+}
+
 /* ESTILOS DA NAV LATERAL */
 
 .icon-espaco {
 	margin-right: 8px;
+}
+
+
+.custom-spinner-blue {
+	color:#2F5671;
+	font-size: 36px;
+}
+
+.custom-spinner-primary {
+	color:#337ab7;
+	font-size: 36px;
+}
+
+.custom-spinner-green {
+	color:#008000;
+	font-size: 36px;
+}
+.custom-spinner-red {
+	color:red;
+	font-size: 36px;
+}
+
+#deslogar {
+    cursor: pointer;
 }
 
 .logo-text {
@@ -11,8 +67,10 @@
 	text-transform: uppercase;
 }
 
-.logo-text:hover{
+.logo-text:hover, .logo-text:focus{
 	color:white;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 #side-bar {
@@ -26,6 +84,7 @@
 .ul-marcada {
 	background:#2F5671;
 }
+
 #collapse-treinamentos ul:hover{
 	background: none;
 }
@@ -41,15 +100,11 @@
 	transition: all 0.5s;
 }
 
-
 .rotate{
 	transform:rotate(180deg);
 }
 
 
-.hidden{
-	display: none;
-}
 #icone {
 	cursor: pointer;
 }
@@ -159,34 +214,6 @@
 	margin-top:10px;
 	font-size: bold;
 }
-.list_of_members {
-	justify-content: space-around;
-}
-.h-u1, .h-u3 {
-    width: 30%;
-    float: left;
-    height: 2px;
-    background-color: #EEE;
-    margin-top: 1px;
-}
-.h-u2 {
-    width: 40%;
-    float: left;
-    height: 4px;
-    background-color: #2F5671;
-}
-
-.h-h5 {
-	font-size: 1.5em;
-	color:#515151;
-	text-align: center;
-	margin-top: 2em;
-}
-#calendario{
-	position: relative;
-	width: 70%;
-	margin: 5em auto;
-}   
 
 .member {
   width: 100%;
@@ -198,8 +225,7 @@
   justify-content: space-around;
   margin-bottom: 1em;
 }
-.member p {
-}
+
 .member h4 {
 	font-size: 1em;
 	color: white;
@@ -272,8 +298,6 @@
 	text-align: center;
 }
 
-
-
 .produtos-pedidos:hover{
 	background: #1c584e;
 }
@@ -305,37 +329,15 @@
 }
 
 
-
 .novos-usuarios:hover{
 	background: #cc9142;
 }
 
-.icon-e-qnd {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin-bottom: 0.8em;
-	align-items: center;
-}
-
-.notif-h1{
-	font-size: 2em;
-	color: white;
-	margin:0;
-}
-
-.notif-h2{
-	font-size: 1em;
-	color: white;
-}
 .icon {
 	float:left;
 	margin-right:5%;
 }
 
-.icon-text {
-	float:left;
-}
 
 .fa-cog {
 	font-size: 4em;
@@ -358,23 +360,11 @@
 	font-size: 1.2em;
 }
 
-
 .produtos-vendidos a,.sales a,.users a, .produtos-pedidos a, .novos-usuarios a {
 	float:right;
 }
+
 /* FIM DOS ESTILOS DO CONTEÚDO À ESQUERDA */
-
-.content {
-  margin: 0 30px 0 0;
-}
-
-.top-content {
-  margin: 0.2em;
-}
-
-.dash-title {
-	margin-top: 3.5em;
-}
 
 
 /***********************************************************************************/
@@ -415,7 +405,7 @@
 	transition: .8s all;
 }
 
-.btn-auxiliar:hover{
+.btn-auxiliar:hover, .btn-auxiliar:focus{
 	color: #00994c;
 	background:white;
 }
@@ -427,41 +417,15 @@
 	transition: .8s all;
 }
 
-.btn-voltar:hover{
+.btn-voltar:hover, .btn-voltar:focus{
 	color: red;
 	background:white;
-}
-.filtro-bebidas {
-	margin-top: 20px;
-	margin-bottom: 50px;
-}
-
-.filtro-bebidas p {
-	font-size: 1.5em;
-}
-
-.row-filtro {
-	margin-top: 10px;
 }
 
 .tr-estilo {
 	background: #2F5671;
 	color: white;
 	font-weight: bold;
-}
-
-.form-add-bebidas {
-	margin-top: 30px;
-}
-
-.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-}
-.add-marca-div {
-	margin-top: 30px;
 }
 
 .estoque-verde{
@@ -483,9 +447,6 @@
 	font-weight: bold;
 }
 
-.div-title {
-	margin: 20px;
-}
 
 .imagen img {
 	width: 200px;
@@ -500,149 +461,4 @@
 	margin-bottom: 20px;
 }
 
-.estoque {
-	margin-top: 40px;
-}
 
-.div-add-estoque {
-	margin: 30px 0 30px 0;
-}
-
-.editar-fornecedor {
-	margin-top: 40px;
-}
-
-.div-promocoes {
-	margin-top: 20px;
-}
-
-#collapse-add-promocao {
-	margin-top: 20px;
-}
-
-/* RESPONSIVIDADE */
-
-
-@media screen and (max-width:1366px){
-	.navigation ul li a {
-		font-size: 1.2em;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-
-	.navigation ul li a {
-		font-size: 1.1em;
-	}
-	.navigation h3 {
-		padding: 0.6em 0;
-		font-size: 1.25em;
-		padding-left: 2em;
-		margin-bottom: 0.8em;
-  	}
-	.navigation ul {
-		padding-left: 3em;
-  	}
-	.logo a img {
-		width: 68%;
-	}
-	.logo {
-		padding: 1em;
-	}
-
-
-}
-
-@media screen and (max-width: 768px) {
-
-	.logo a img {
-		width: 20%;
-	}
-	.logo {
-		padding: 2em 0;
-  	}
-  .member {
-		min-height: 100px;
-	}
-	.produtos-vendidos, .produtos-pedidos, .novos-usuarios {
-		padding: 1.2em 1em;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	.navigation ul li a {
-		font-size: 1em;
-  	}
-  .logo a img {
-		width: 24%;
-	}
-	.logo {
-		padding: 0.8em;
-  	}
-  .member {
-		min-height: 100px;
-	}
-
-}
-
-@media screen and (max-width:480px){
-
-	.content {
-		margin: 0;
-	}
-
-	.logo a img {
-		width: 30%;
-  	}
-  	.member p a {
-		font-size: 1.4em;
- 	}
-  	.member{
-		width:100%;
-		margin-top:3%;
-		padding: 2em 5em 0;
-	}
-	.produtos-pedidos ,.produtos-vendidos, .novos-usuarios, .treinamento-concluidos, .treinamento-nao-realizados {
-		width:48%;
-		margin-left:1%;
-		margin-right:0;
-		padding: 1em 0.5em 0.7em 0.5em;
-		margin-top:2%;
-	}
-	.produtos-vendidos h3, .sales h3, .users h3, .novos-usuarios h3, .produtos-pedidos h3 {
-		font-size: 2em;
-	}
-	.produtos-vendidos p, .sales p, .users p, .produtos-pedidos p, .novos-usuarios p  {
-		font-size: 0.875em;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	.navigation h3 {
-		font-size: 1.2em;
-	}
-	.navigation {
-		padding-bottom: 1em;
-  }
-
-	.logo a img {
-		width:45%;
-	}
-	.logo {
-		padding: 0.6em;;
-	}
-  .member {
-		padding: 2em 1em 0;
-	}
-	.produtos-vendidos, .sales,.users{
-		width:100%;
-		margin-right:0;
-	}
-	.produtos-pedidos, .produtos-vendidos, .treinamento-concluidos, .treinamento-nao-realizados {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-		padding: 1em 0.5em 0.7em 3.5em;
-		margin-top: 2%;
-	}
-}

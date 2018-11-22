@@ -4,8 +4,8 @@
 </div>
 
 
-<div class = "collapse" id = "collapse-add-promocao">
-    <form method = "POST" action = "/beer-ecommerce/dash/promocao/gravar">
+<div class = "collapse margin-top" id = "collapse-add-promocao">
+    <form method = "POST" action = "/beer-ecommerce/dash/promocao/gravar" id = 'form-add-promocao'>
         <input type = "hidden" name = "tipo" value = "adicionar">
         <div class = "row">
             <div class = "col-md-4">
@@ -22,26 +22,23 @@
                 <label>O desconto será aplicado em:</label>
                 <select multiple='' name='bebidas_desconto[]' class='ui fluid normal dropdown' id = 'bebidas_desconto' required>
                     <option value=''>Bebidas</option>
-                    <?php
-                        /* listando as bebidas */
-                        foreach($bebidas as $bebida)
-                            echo "<option value = '".$bebida['id_tipo_bebida']."'>".$bebida['nome_tipo_bebida']."</option>";
-                    ?>
+                    <?php foreach($bebidas as $bebida){ ?>
+                        <option value = '<?= $bebida['id_bebida'] ?>'><?=$bebida['nome_bebida']?></option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
 
-        <div class = "center div-promocoes">
-            <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+        <div class = "center div-promocoes" id = 'div-add-promocao'>
+            <button type = "submit" class = "btn btn-adicionar" id = 'btn-add-promocao'><i class = "icon-espaco fa fa-plus"></i>Gravar</button>
         </div>
 
     </form>
 </div>
 
-<div class = "div-promocoes">
+<div class = "margin-top">
 
     <table class="table table-bordered" id = "tabela-fornecedores">
-            
         <thead>
             <tr class = "tr-estilo">
                 <th class="text-center">ID</th>
@@ -52,27 +49,25 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-                /* listando os dados */
-                foreach($promocoes as $promocao){
+            <?php foreach($promocoes as $promocao){ ?>
 
-                    echo "<tr>";
-                    echo "<td class = 'text-center'>#".$promocao['id_promocao']."</td>";
-                    echo "<td class = 'text-center td-nome'>".$promocao['apelido_promocao']."</td>";
-                    echo "<td class = 'text-center td-nome'>".$promocao['desconto']."%</td>";
-                    echo "
-                        <td class = 'text-center'>
-                            <input id-promocao = '".$promocao['id_promocao']."' class = 'toggle-status-promocao' type='checkbox' data-on='Ativada' data-off='Desativada' ".($promocao['status'])." data-toggle='toggle' data-onstyle='success' data-offstyle='danger' status = '".($promocao['status'])."'>
-                        </td>";
-                    echo "
-                    <td class = 'text-center'>
-                        <a href = '/beer-ecommerce/dash/promocao/editar/".$promocao['id_promocao']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
-                    </td>";
+            <tr>
+                <td class = 'text-center'>#<?=$promocao['id_promocao']?></td>
+                <td class = 'text-center td-nome'><?=$promocao['apelido_promocao']?></td>
+                <td class = 'text-center td-nome'><?=$promocao['desconto']?>%</td>
+    
+                <td class = 'text-center'>
+                    <input id-promocao = '<?=$promocao['id_promocao']?>' class = 'toggle-status-promocao' type='checkbox' data-on='Ativada' data-off='Desativada' <?=$promocao['status'] ?> data-toggle='toggle' data-onstyle='success' data-offstyle='danger' status = '<?=$promocao['status']?>'>
+                </td>
+                    
+                <td class = 'text-center'>
+                    <a href = '/beer-ecommerce/dash/promocao/editar/<?=$promocao['id_promocao']?>'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                </td>
 
-                    echo "</tr>";
+            </tr>
 
-                }
-            ?>
+            <?php } ?>
+
         </tbody>
     </table>
 </div>

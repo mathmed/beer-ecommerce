@@ -57,17 +57,16 @@ $(document).ready(function(){
                                     "<span aria-hidden='true'>&times;</span>"+
                                     "</button>"+
                                 "</div>"+
-                                "<form method = 'POST' action = '/beer-ecommerce/dash/bebida/atualizar'>"+
+                                "<form method = 'POST' action = '/beer-ecommerce/dash/categoria/atualizar'>"+
                                     "<div class='modal-body'>"+
-                                        "<label>Nome da categoria</label>"+
-                                        "<input name = 'nome-categoria' value = '"+nome+"' class = 'form-control'>"+
-                                        "<input type = 'hidden' name = 'id-categoria' value = '"+id+"'>"+
-                                        "<input type = 'hidden' name = 'tipo' value = 'categoria'>"+
+                                        "<label>Descrição da categoria</label>"+
+                                        "<input name = 'descricao_categoria' value = '"+nome+"' class = 'form-control'>"+
+                                        "<input type = 'hidden' name = 'id_categoria' value = '"+id+"'>"+
                                     "</div>"+
                                     "<div class='modal-footer'>"+
                                     
                                         "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Fechar janela</button>"+
-                                        "<a class='btn btn-danger' href = '/beer-ecommerce/dash/bebida/apagar/categoria/"+id+"'"+">Apagar categoria</a>"+
+                                        "<a class='btn btn-danger' href = '/beer-ecommerce/dash/categoria/apagar/"+id+"'"+">Apagar categoria</a>"+
                                         "<button type='submit' class='btn btn-primary'>Atualizar</button>"
                                     "</div>"+
                                 "</form>"+
@@ -99,17 +98,16 @@ $(document).ready(function(){
                                     "<span aria-hidden='true'>&times;</span>"+
                                     "</button>"+
                                 "</div>"+
-                                "<form method = 'POST' action = '/beer-ecommerce/dash/bebida/atualizar'>"+
+                                "<form method = 'POST' action = '/beer-ecommerce/dash/marca/atualizar'>"+
                                     "<div class='modal-body'>"+
                                         "<label>Nome da marca</label>"+
-                                        "<input name = 'nome-marca' value = '"+nome+"' class = 'form-control'>"+
-                                        "<input type = 'hidden' name = 'id-marca' value = '"+id+"'>"+
-                                        "<input type = 'hidden' name = 'tipo' value = 'marca'>"+
+                                        "<input name = 'nome_marca' value = '"+nome+"' class = 'form-control'>"+
+                                        "<input type = 'hidden' name = 'id_marca' value = '"+id+"'>"+
                                     "</div>"+
                                     "<div class='modal-footer'>"+
                                     
                                         "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Fechar janela</button>"+
-                                        "<a class='btn btn-danger' href = '/beer-ecommerce/dash/bebida/apagar/marca/"+id+"'"+">Apagar marca</a>"+
+                                        "<a class='btn btn-danger' href = '/beer-ecommerce/dash/marca/apagar/"+id+"'"+">Apagar marca</a>"+
                                         "<button type='submit' class='btn btn-primary'>Atualizar</button>"
                                     "</div>"+
                                 "</form>"+
@@ -124,13 +122,12 @@ $(document).ready(function(){
     })
 
 
-
     /* Função para controlar o click do botão de toggle do status de uma bebida */
     $(".toggle-status-bebida").change(function(){
 
         /* recebendo os dados */
         const id = $(this).attr("id-bebida");
-        const status = $(this).attr("status");        
+        const status = $(this).attr("status");     
         /* Chamando função a partir do AJAX */
         $.ajax({
             url: '/beer-ecommerce/dash/bebida/attStatus/',
@@ -144,7 +141,8 @@ $(document).ready(function(){
 
         /* recebendo os dados */
         const id = $(this).attr("id-promocao");
-        const status = $(this).attr("status");        
+        const status = $(this).attr("status");
+        
         /* Chamando função a partir do AJAX */
         $.ajax({
             url: '/beer-ecommerce/dash/promocao/attStatus/',
@@ -188,6 +186,59 @@ $(document).ready(function(){
             }
         }
     })
-               
 
+    /* chamando função para deslogar do sistema */
+    $("#deslogar").click(function(){window.location = "/beer-ecommerce/dash/auth/deslogar"})
+    
+    
+    /* Funções para adicinar spinner após o clique */
+    $("#form-add-bebida").submit(function(){
+        $("#btn-add-bebida").remove();
+        $("#div-add-bebida").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-editar-bebida").submit(function(){
+        $("#btn-editar-bebida").remove();
+        $("#div-editar-bebida").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-estoque").submit(function(){
+        $("#btn-add-estoque").remove();
+        $("#div-add-estoque").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-remover-estoque").submit(function(){
+        $("#btn-remover-estoque").remove();
+        $("#div-remover-estoque").append("<i class='fas fa-spinner fa-pulse custom-spinner-red'></i>");
+    })
+
+    $("#form-add-marca").submit(function(){
+        $("#btn-add-marca").remove();
+        $("#div-add-marca").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-categoria").submit(function(){
+        $("#btn-add-categoria").remove();
+        $("#div-add-categoria").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-fornecedor").submit(function(){
+        $("#btn-add-fornecedor").remove();
+        $("#div-add-fornecedor").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-att-fornecedor").submit(function(){
+        $("#btn-att-fornecedor").remove();
+        $("#div-att-fornecedor").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-add-promocao").submit(function(){
+        $("#btn-add-promocao").remove();
+        $("#div-add-promocao").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+
+    $("#form-att-promocao").submit(function(){
+        $("#btn-att-promocao").remove();
+        $("#div-att-promocao").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
 }); 

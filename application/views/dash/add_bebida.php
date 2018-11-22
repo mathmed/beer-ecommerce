@@ -2,23 +2,23 @@
 
 <div class = "row">
     <div class = "col-md-2">
-        <a href = "/beer-ecommerce/dash/bebida/gerenciar_bebidas"><button class = "btn btn-voltar"><i class = " icon-espaco fa fa-chevron-circle-left"></i>Voltar</button></a>
+        <a href = "/beer-ecommerce/dash/bebida/"><button class = "btn btn-voltar"><i class = " icon-espaco fa fa-chevron-circle-left"></i>Voltar</button></a>
     </div>
 
     <div class = "col-md-8">
-        <h1>Adicionar nova bebida</h1>
+        <h1 class = "title">Adicionar nova bebida</h1>
     </div>
 </div>
 
-<div class = "form-add-bebidas">
+<div class = "form-add-bebidas margin-top">
 
-    <?= form_open_multipart('dash/bebida/gravar') ?>
+    <?= form_open_multipart("dash/bebida/gravar", "id ='form-add-bebida'") ?>
 
         <input type = "hidden" name = "tipo" value = "bebida">
         <input type = "hidden" name = "acao_bebida" value = "gravar"> 
         <div class = "form-group">
             <label>Nome da bebida</label>
-            <input name = "nome_tipo_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>
+            <input name = "nome_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>
         </div>
         <div class = "form-group">
             <label>Quantidade de Ml's</label>
@@ -45,10 +45,11 @@
         <div class = "form-group">
             <label>Marca</label>
             <select name = "marca" class = "form-control" required>
-                <?php
-                    foreach($marcas as $marca)
-                        echo "<option value = '".$marca['id_marca']."'>".$marca['nome_marca']."</option>";            
-                ?>
+
+                <?php foreach($marcas as $marca){ ?>
+                    <option value = '<?=$marca['id_marca'] ?>'><?=$marca['nome_marca'] ?></option>            
+                <?php } ?>
+
             </select>
         </div>
 
@@ -56,16 +57,17 @@
             <label>Adicione categorias à essa bebida</label>
             <select multiple='' name='categorias[]' class='ui fluid normal dropdown' id = 'categorias' required>
                 <option value=''>Categorias</option>
-                <?php
-                    foreach($categorias as $categoria)
-                        echo "<option value = '".$categoria['id_categoria']."'>".$categoria['descricao_categoria']."</option>";            
-                ?>
+
+                <?php foreach($categorias as $categoria){ ?>
+                    <option value = '<?=$categoria['id_categoria']?>'><?= $categoria['descricao_categoria'] ?></option> 
+                <?php } ?>
+                
             </select>
         </div>
 
         <div class = "form-group">
             <label>Quantidade inicial em estoque (digite 0 caso não tenha em estoque ainda)</label>
-            <input name = "estoque" class = "form-control" required type = "number" placeholder = "Quantidade em estoque">
+            <input name = "qtd_estoque" class = "form-control" required type = "number" placeholder = "Quantidade em estoque">
         </div>
 
         <div class = "form-group">
@@ -81,8 +83,8 @@
             <input name = "img4" type = 'file' class = "form-control" required>
         </div>
 
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+        <div class = "center" id = "div-add-bebida">
+            <button id = "btn-add-bebida" type = "submit" class = "btn btn-adicionar">Gravar</button>
         </div>
         
         <?= form_close() ?> 

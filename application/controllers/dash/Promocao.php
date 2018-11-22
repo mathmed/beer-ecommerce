@@ -8,13 +8,13 @@ class Promocao extends CI_Controller {
     /* Construtor do controlador de promoções */
     public function __construct(){
 
-		/* carregando o model de promoção */
+		/* carregando o os DAOS necessários para a págia */
 		parent::__construct();
-        $this->load->model("dash/promocao_model", "promocao");
+        $this->load->dao("promocao_dao", "", TRUE);
+        $this->load->dao("bebida_dao", "", TRUE);
         
 	}
 
-	
 	/* primeira função que é chamada (carregando a tela) */
 	public function index(){
 
@@ -26,11 +26,10 @@ class Promocao extends CI_Controller {
         $data['cor_ul_gpromocoes'] = 'ul-marcada';
 
         /* carregando as bebidas */
-        $this->load->model("dash/bebida_model", "bebida");
-        $dados['bebidas'] = $this->bebida->getBebidas();
+        $dados['bebidas'] = $this->bebida_dao->getBebidas();
 
         /* carregando as promoções */
-        $dados['promocoes'] = $this->promocao->getPromocoes();
+        $dados['promocoes'] = $this->promocao_dao->getPromocoes();
 
         /* Carregando a view da tela de gerenciamento de promoções */
         $this->load->view("dash/base.php", $data);
@@ -49,15 +48,16 @@ class Promocao extends CI_Controller {
         $dados['apelido_promocao'] = $this->input->post("apelido_promocao");
         $dados['desconto'] = $this->input->post("desconto");
         $dados['bebidas_desconto'] = $this->input->post("bebidas_desconto");
+        $dados['status'] = $this->input->post("status") ? $this->input->post("status") : "checked";
     
 
         if($this->input->post("tipo") == "adicionar")
             /* chamando a função para adicionar uma nova promoção */
-            $this->promocao->addPromocao($dados);
+            $this->promocao_dao->addPromocao($dados);
 
         else
             /* chamando a função para atualizar uma promoção */
-            $this->promocao->attPromocao($dados, $this->input->post("id_promocao"));
+            $this->promocao_dao->attPromocao($dados, $this->input->post("id_promocao"));
 
         /* redirecionando */
         redirect("dash/promocao");
@@ -74,7 +74,7 @@ class Promocao extends CI_Controller {
         $status = $this->input->post("status"); 
 
         /* chama a função do model */
-        $this->promocao->attStatusPromocao($id, $status);
+        $this->promocao_dao->attStatusPromocao($id, $status);
     }
 
     /* função para chamar a página de editar uma promoção */
@@ -86,14 +86,11 @@ class Promocao extends CI_Controller {
 		/* verifica se foi passado um id */
         if(!$id) redirect("/");
     
-		/* Carregando os models necessários */
-        $this->load->model("dash/bebida_model", "bebida");
-
         /* carregando informações sobre a promoção */
-        $dados['promocao'] = $this->promocao->getPromocaoByID($id)[0];
+        $dados['promocao'] = $this->promocao_dao->getPromocaoByID($id)[0];
 
         /* carregando as bebidas */
-        $dados['bebidas'] = $this->bebida->getBebidas();
+        $dados['bebidas'] = $this->bebida_dao->getBebidas();
 
         $dados['cor_ul_gpromocoes'] = 'ul-marcada';
 

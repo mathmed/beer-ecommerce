@@ -2,25 +2,27 @@
 
 <div class = "row">
     <div class = "col-md-2">
-        <a href = "/beer-ecommerce/dash/bebida/gerenciar_bebidas"><button class = "btn btn-voltar"><i class = " icon-espaco fa fa-chevron-circle-left"></i>Voltar</button></a>
+        <a href = "/beer-ecommerce/dash/bebida/"><button class = "btn btn-voltar"><i class = " icon-espaco fa fa-chevron-circle-left"></i>Voltar</button></a>
     </div>
 
     <div class = "col-md-2">
-        <a href = "/beer-ecommerce/dash/bebida/estoque/<?= $bebida['id_tipo_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_tipo_bebida'] ?></button></a>
+        <a href = "/beer-ecommerce/dash/bebida/estoque/<?= $bebida['id_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_bebida'] ?></button></a>
     </div>
 
 </div>
 
-<div class = "form-add-bebidas">
+<div class = "form-add-bebidas margin-top">
 
-    <?= form_open_multipart('dash/bebida/gravar') ?>
+    <?= form_open_multipart('dash/bebida/gravar', "id='form-editar-bebida'") ?>
         <input type = "hidden" name = "acao_bebida" value = "editar"> 
         <input type = "hidden" name = "tipo" value = "bebida"> 
-        <input type = "hidden" name = "id_tipo_bebida" value = "<?= $bebida['id_tipo_bebida'] ?>">
-        
+        <input type = "hidden" name = "id_bebida" value = "<?= $bebida['id_bebida'] ?>">
+        <input type = "hidden" name = "qtd_estoque" value = "<?= $bebida['qtd_estoque'] ?>">
+        <input type = "hidden" name = "status_bebida" value = "<?= $bebida['status_bebida'] ?>">
+
         <div class = "form-group">
             <label>Nome da bebida</label>
-            <input value = "<?= $bebida['nome_tipo_bebida'];?>" name = "nome_tipo_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>
+            <input value = "<?= $bebida['nome_bebida'];?>" name = "nome_bebida" class = "form-control" placeholder = "Esse será o nome que aparecerá para os clientes" required>
         </div>
         <div class = "form-group">
             <label>Quantidade de Ml's</label>
@@ -94,8 +96,8 @@
             ?>
 
         </div>        
-        <div class = "center">
-            <button type = "submit" class = "btn btn-adicionar">Atualizar</button>
+        <div class = "center" id = 'div-editar-bebida'>
+            <button id = 'btn-editar-bebida' type = "submit" class = "btn btn-adicionar">Atualizar</button>
         </div>
         
         <?= form_close() ?> 

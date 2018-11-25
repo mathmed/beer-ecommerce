@@ -1299,8 +1299,9 @@ button.submit.check_out{
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner9{
-	background:url(../images/27.jpg) no-repeat 0px 0px;
-	background-size:cover;
+	background:url(../images/bar-918541_1920.jpg) no-repeat 0px 0px;
+	background-size: center;
+	background-position: center;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
@@ -1824,7 +1825,7 @@ h2.typoh2{
 .w3l_banner_nav_right_banner_pet p{
 	margin:0 0 2em;
 	font-size:14px;
-	color:#fff;
+	color:black;
 	line-height:1.8em;
 }
 .w3l_banner_nav_right_banner_pet a,.w3ls_service_grids1_right a{
@@ -2932,7 +2933,7 @@ input.checkbox:checked:after {
 		width: 89%;
 	}
 	.w3l_banner_nav_right_banner9 {
-		background-position:-50px 0px;
+		background-position:center;
 	}
 	.w3agile_event_grid_right {
 		padding-right: 0;
@@ -2976,7 +2977,7 @@ input.checkbox:checked:after {
 		background-position:-130px 0px;
 	}
 	.w3l_banner_nav_right_banner9 {
-		background-position: -125px 0px;
+		background-position: center;
 	}
 	.agileinfo_single_right {
 		padding-left: 3em;
@@ -3104,7 +3105,7 @@ input.checkbox:checked:after {
 		background-position: -45px 0px;
 	}
 	.w3l_banner_nav_right_banner9 {
-		background-position: -45px 0px;
+		background-position: center;
 	}
 	.w3l_banner_nav_right_banner9 h4 {
 		font-size: 1.6em;
@@ -3843,7 +3844,7 @@ input.checkbox:checked:after {
 		padding: 2em 0 0 2em !important;
 	}
 	.w3l_banner_nav_right_banner9 {
-		background-position: -95px 0px;
+		background-position: center;
 	}
 	.w3ls_service_grid_left {
 		padding: 0;

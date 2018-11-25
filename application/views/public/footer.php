@@ -18,21 +18,21 @@
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-3 w3_footer_grid">
-				<h3>information</h3>
+				<h3>Informações</h3>
 				<ul class="w3_footer_grid_list">
 					<li><a href="/beer-ecommerce/events">Events</a></li>
-					<li><a href="/beer-ecommerce/about">About Us</a></li>
-					<li><a href="/beer-ecommerce/products">Best Deals</a></li>
-					<li><a href="/beer-ecommerce/services">Services</a></li>
+					<li><a href="/beer-ecommerce/about">Sobre</a></li>
+					<li><a href="/beer-ecommerce/products">Produtos</a></li>
+					<li><a href="/beer-ecommerce/services">Serviços</a></li>
 					<li><a href="/beer-ecommerce/short-codes">Short Codes</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
-				<h3>policy info</h3>
+				<h3>Informações políticas</h3>
 				<ul class="w3_footer_grid_list">
 					<li><a href="/beer-ecommerce/faqs">FAQ</a></li>
-					<li><a href="/beer-ecommerce/privacy">privacy policy</a></li>
-					<li><a href="/beer-ecommerce/privacy">terms of use</a></li>
+					<li><a href="/beer-ecommerce/privacy">Privacidade</a></li>
+					<li><a href="/beer-ecommerce/privacy">Termos de uso</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
@@ -60,13 +60,13 @@
 			<div class="agile_footer_grids">
 				<div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
 					<div class="w3_footer_grid_bottom">
-						<h4>100% secure payments</h4>
+						<h4>Pagamento 100% seguro</h4>
 						<img src="<?=base_url("assets/public/images/card.png")?>" alt=" " class="img-responsive" />
 					</div>
 				</div>
 				<div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
 					<div class="w3_footer_grid_bottom">
-						<h5>connect with us</h5>
+						<h5>Nós estamos nas redes sociais</h5>
 						<ul class="agileits_social_icons">
 							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

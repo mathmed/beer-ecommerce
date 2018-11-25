@@ -52,7 +52,7 @@
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
+                                                <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
                                                 <p><?= $item['nome_bebida']; ?></p>
                                                 <h4>R$ <?= $item['preco_bebida']; ?><span>$10.00</span></h4>
                                             </div>

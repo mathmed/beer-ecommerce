@@ -1,3 +1,4 @@
+<?php print_r($bebida) ?>
 <!-- products-breadcrumb -->
 	<div class="products-breadcrumb">
 		<div class="container">
@@ -36,9 +37,9 @@
 				<h3>Best Deals For New Products<span class="blink_me"></span></h3>
 			</div>
 			<div class="agileinfo_single">
-				<h5>charminar pulao basmati rice 5 kg</h5>
+				<h5><?= $bebida['nome_bebida']?></h5>
 				<div class="col-md-4 agileinfo_single_left">
-					<img id="example" src="<?=base_url("assets/public/images/76.png")?>" alt=" " class="img-responsive" />
+					<img id="example" src="" alt=" " class="img-responsive" />
 				</div>
 				<div class="col-md-8 agileinfo_single_right">
 					<div class="rating1">

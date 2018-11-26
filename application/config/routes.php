@@ -80,7 +80,7 @@ $route['dash'] = "dash/auth";
 
 /* Rotas de variáveis por get */
 $route['beer-ecommerce/dash/bebida/apagar/(:any)/(:num)'] = 'beer-ecommerce/dash/bebida/apagar/$1/$2';
-$route['categoria/(:any)'] = 'public/categoria/index/$1';
+$route['categoria/(:num)'] = 'public/categoria/index/$1';
 
 
 

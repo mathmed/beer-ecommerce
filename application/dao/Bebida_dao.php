@@ -16,10 +16,10 @@ Class Bebida_dao extends MY_Dao{
     }
 
     /* função para retornar todas as bebidas do estoque (ou algumas em caso de filtro) */
-    public function getBebidas($categoria = NULL){
+    public function getBebidas($id_categoria = NULL){
 
         /* iniciando as query das bebidas */
-        if($categoria == NULL){
+        if($id_categoria == NULL){
             $this->db->select("*");
             $this->db->from("bebida");
             $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
@@ -42,15 +42,8 @@ Class Bebida_dao extends MY_Dao{
             
             }
         }else{
-            $this->db->select("*");
-            $this->db->from("bebida");
-            $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
-            $this->db->join("tipo_bebida_has_categoria", "tipo_bebida_has_categoria.id_bebida = bebida.id_bebida", "inner");
-            $this->db->join("categoria", "categoria.id_categoria = tipo_bebida_has_categoria.id_categoria", "inner");
-            $this->db->where("categoria.descricao_categoria", $categoria);
-
-            $bebidas = $this->db->get();
-
+            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN tipo_bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN imagem as i ON (i.id_bebida = b.id_bebida) WHERE c.id_categoria = $id_categoria");
+            
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
             $bebidas = $bebidas->result_array;

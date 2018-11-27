@@ -3,7 +3,7 @@
 		<div class="container">
 			<ul>
 				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/home">Home</a><span>|</span></li>
-				<li>Mail Us</li>
+				<li>Envie-nos</li>
 			</ul>
 		</div>
 	</div>
@@ -34,36 +34,36 @@
 		<div class="w3l_banner_nav_right">
 <!-- mail -->
 		<div class="mail">
-			<h3>Mail Us</h3>
+			<h3>Envie-nos</h3>
 			<div class="agileinfo_mail_grids">
 				<div class="col-md-4 agileinfo_mail_grid_left">
 					<ul>
 						<li><i class="fa fa-home" aria-hidden="true"></i></li>
-						<li>address<span>868 1st Avenue NYC.</span></li>
+						<li>Endereço<span>Penedo, Caicó - RN, 59300-000</span></li>
 					</ul>
 					<ul>
 						<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-						<li>email<span><a href="mailto:info@example.com">info@example.com</a></span></li>
+						<li>E-mail<span><a href="contato@beer.com">contato@beer.com</a></span></li>
 					</ul>
 					<ul>
 						<li><i class="fa fa-phone" aria-hidden="true"></i></li>
-						<li>call to us<span>(+123) 233 2362 826</span></li>
+						<li>Ligue pra gente<span>(+55) 99999-9999</span></li>
 					</ul>
 				</div>
 				<div class="col-md-8 agileinfo_mail_grid_right">
 					<form action="#" method="post">
 						<div class="col-md-6 wthree_contact_left_grid">
-							<input type="text" name="Name" value="Name*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name*';}" required="">
-							<input type="email" name="Email" value="Email*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email*';}" required="">
+							<input type="text" name="name" value="Nome*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nome*';}" required="">
+							<input type="email" name="email" value="Email*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email*';}" required="">
 						</div>
 						<div class="col-md-6 wthree_contact_left_grid">
-							<input type="text" name="Telephone" value="Telephone*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone*';}" required="">
-							<input type="text" name="Subject" value="Subject*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject*';}" required="">
+							<input type="text" name="telefone" value="Telefone*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefone*';}" required="">
+							<input type="text" name="sujeito" value="Sujeito*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sujeito*';}" required="">
 						</div>
 						<div class="clearfix"> </div>
-						<textarea  name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-						<input type="submit" value="Submit">
-						<input type="reset" value="Clear">
+						<textarea  name="mensagem" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mensagem...';}" required="">Mensagem...</textarea>
+						<input type="submit" value="Enviar">
+						<input type="reset" value="Limpar">
 					</form>
 				</div>
 				<div class="clearfix"> </div>

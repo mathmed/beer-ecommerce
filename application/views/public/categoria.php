@@ -33,8 +33,8 @@
 		</div>
 		<div class="w3l_banner_nav_right">
 			<div class="w3l_banner_nav_right_banner9 w3l_banner_nav_right_banner_pet">
-				<h4>Your Pet Favourite Food</h4>
-				<p>Sint occaecat cupidatat non proident</p>
+				<h4><?= $categoria ?></h4>
+				<p>Boas compras</p>
 				<a href="/beer-ecommerce/single">Shop Now</a>
 			</div>
 			<div class="w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub">
@@ -52,7 +52,7 @@
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
+                                                <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
                                                 <p><?= $item['nome_bebida']; ?></p>
                                                 <h4>R$ <?= $item['preco_bebida']; ?><span>$10.00</span></h4>
                                             </div>

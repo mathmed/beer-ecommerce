@@ -29,10 +29,14 @@ Class Bebida_dao extends MY_Dao{
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
             $bebidas = $bebidas->result_array;
+
             
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
-            
+
+                /* Fazendo um request na tebela estoque e guardando o resultado no array de retorno */
+                $bebidas[$i]['qtd_estoque'] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0]['SUM(atual)'];
+                
                 $em_estoque = $bebidas[$i]['qtd_estoque'];
 
                 /* verificando a cor da linha do estoque */
@@ -42,7 +46,7 @@ Class Bebida_dao extends MY_Dao{
             
             }
         }else{
-            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN tipo_bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN imagem as i ON (i.id_bebida = b.id_bebida) WHERE c.id_categoria = $id_categoria");
+            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN imagem as i ON (i.id_bebida = b.id_bebida) WHERE c.id_categoria = $id_categoria");
             
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
@@ -102,9 +106,9 @@ Class Bebida_dao extends MY_Dao{
             $query = $query->result_array();
 
             /* verificando as categorias relacionadas */
-            $this->db->select("descricao_categoria, tipo_bebida_has_categoria.id_categoria");
-            $this->db->from("tipo_bebida_has_categoria");
-            $this->db->join("categoria", "categoria.id_categoria = tipo_bebida_has_categoria.id_categoria");
+            $this->db->select("descricao_categoria, bebida_has_categoria.id_categoria");
+            $this->db->from("bebida_has_categoria");
+            $this->db->join("categoria", "categoria.id_categoria = bebida_has_categoria.id_categoria");
             $this->db->where("id_bebida = $id");
 
             /* Requisitando as categorias  */
@@ -125,6 +129,9 @@ Class Bebida_dao extends MY_Dao{
             
             /* adicionando as categorias no retorno */ 
             $query[0]["imagens"] = $imagens;
+
+            /* adicionando a quantidade em estoque */
+            $query[0]["qtd_estoque"] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = $id")->result_array()[0]['SUM(atual)'];
 
             /* retornando o resultado */
             return $query;
@@ -156,7 +163,7 @@ Class Bebida_dao extends MY_Dao{
                 
                 /* adicionando as categorias da bebida */
                 foreach($dados['categorias'] as $categoria)
-                    $this->db->insert("tipo_bebida_has_categoria", ["id_bebida" => $id, "id_categoria" => $categoria]);
+                    $this->db->insert("bebida_has_categoria", ["id_bebida" => $id, "id_categoria" => $categoria]);
 
                 /* Adicionando mensagen de sucesso na sessão */
                 $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-success'>Bebida adicionada com sucesso! Agora você pode gerenciá-la quando quiser.</div>");
@@ -186,16 +193,16 @@ Class Bebida_dao extends MY_Dao{
 
             /* removendo as categorias atuais da bebida */
             $this->db->where("id_bebida = $id");
-            $this->db->delete("tipo_bebida_has_categoria");
+            $this->db->delete("bebida_has_categoria");
             
 
             /* adicionando as novas categorias */
             foreach($dados['categorias'] as $key => $value){
 
                 /* iniciando a query */
-                $query = " INSERT INTO tipo_bebida_has_categoria (id_bebida, id_categoria)
+                $query = " INSERT INTO bebida_has_categoria (id_bebida, id_categoria)
                     SELECT $id, $value FROM DUAL WHERE NOT EXISTS (
-                        SELECT * FROM tipo_bebida_has_categoria WHERE id_bebida = $id AND id_categoria = $value
+                        SELECT * FROM bebida_has_categoria WHERE id_bebida = $id AND id_categoria = $value
                     ); ";
 
                 /* executando a query */
@@ -211,61 +218,6 @@ Class Bebida_dao extends MY_Dao{
             else
                 $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-danger'>Erro ao atualizar bebida</div>");
         }
-    }
-
-    /* função para atualizar o estoque de bebidas */
-    public function attEstoque($dados = NULL){
-
-        /* verifica se foram passados parâmetros */
-        if($dados){
-
-            /* caso para adicionar bebidas ao estoque */
-            if($dados['tipo'] == 'add'){
-
-                /* verificando se a quantidade informada é maior que 0 */
-                if($dados['quantidade-add-estoque'] > 0){
-
-                    /* total para adicionar */
-                    $add = $dados['qtd_estoque'] + $dados['quantidade-add-estoque'];
-
-                    /* atualizando */
-                    $this->db->where('id_bebida', $dados['id_bebida']);
-                    $this->db->update("bebida", ['qtd_estoque' => $add ]);
-
-                    /* adicinando mensagem de sucesso */
-                    $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-success'>Estoque atualizado com sucesso!</div>");
-
-
-                }else{
-                    $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-danger'>Erro ao atualizar estoque, você informou um valor inválido.</div>");
-
-                }
-
-            }
-
-            /* caso para remover bebidas do estoque */
-            else{
-                /* verificando se a quantidade informada é maior que 0 */
-                if($dados['quantidade-remove-estoque'] > 0 && $dados['quantidade-remove-estoque'] <= $dados['qtd_estoque']){
-
-                    /* total para remover */
-                    $remove = $dados['qtd_estoque'] - $dados['quantidade-remove-estoque'];
-
-                    /* atualizando */
-                    $this->db->where('id_bebida', $dados['id_bebida']);
-                    $this->db->update("bebida", ['qtd_estoque' => $remove ]);
-
-                    /* adicinando mensagem de sucesso */
-                    $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-success'>Estoque atualizado com sucesso!</div>");
-
-                }else{
-                    $this->session->set_flashdata('gravar_dados_bebidas', "<div class = 'alert alert-danger'>Erro ao atualizar estoque, você informou um valor inválido.</div>");
-
-                }
-            }
-
-        }
-
     }
 
     /* função responsável por fazer o upload e inserir no banco de dados as imagens */

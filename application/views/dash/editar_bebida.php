@@ -6,7 +6,7 @@
     </div>
 
     <div class = "col-md-2">
-        <a href = "/beer-ecommerce/dash/bebida/estoque/<?= $bebida['id_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_bebida'] ?></button></a>
+        <a href = "/beer-ecommerce/dash/estoque/<?= $bebida['id_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_bebida'] ?></button></a>
     </div>
 
 </div>

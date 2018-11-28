@@ -36,7 +36,9 @@ Class Bebida_dao extends MY_Dao{
 
                 /* Fazendo um request na tebela estoque e guardando o resultado no array de retorno */
                 $bebidas[$i]['qtd_estoque'] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0]['SUM(atual)'];
-                
+
+                if(!$bebidas[$i]['qtd_estoque']) $bebidas[$i]['qtd_estoque'] = 0;
+
                 $em_estoque = $bebidas[$i]['qtd_estoque'];
 
                 /* verificando a cor da linha do estoque */
@@ -132,6 +134,9 @@ Class Bebida_dao extends MY_Dao{
 
             /* adicionando a quantidade em estoque */
             $query[0]["qtd_estoque"] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = $id")->result_array()[0]['SUM(atual)'];
+
+            if(!$query[0]["qtd_estoque"]) $query[0]["qtd_estoque"] = 0;
+
 
             /* retornando o resultado */
             return $query;

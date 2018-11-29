@@ -68,8 +68,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="mega-dropdown-menu">
 						<div class="w3ls_vegetables">
 							<ul class="dropdown-menu drp-mnu">
-								<li><a href="/beer-ecommerce/public/login">Entrar</a></li> 
-								<li><a href="/beer-ecommerce/public/login">Criar conta</a></li>
+								<li><a href="/beer-ecommerce/login">Entrar</a></li> 
+								<li><a href="/beer-ecommerce/login">Criar conta</a></li>
 							</ul>
 						</div>                  
 					</div>	
@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</ul>
 		</div>
 		<div class="w3l_header_right1">
-			<h2><a href="/beer-ecommerce/public/mail">Fale Conosco</a></h2>
+			<h2><a href="/beer-ecommerce/mail">Fale Conosco</a></h2>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -100,14 +100,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="logo_products">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
-				<h1><a href="/beer-ecommerce/public/home"><span>Duff</span> Club</a></h1>
+				<h1><a href="/beer-ecommerce/home"><span>Duff</span> Club</a></h1>
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="special_items">
-					<li><a href="/beer-ecommerce/public/events">Events</a><i>/</i></li>
-					<li><a href="/beer-ecommerce/public/about">About Us</a><i>/</i></li>
-					<li><a href="/beer-ecommerce/public/products">Best Deals</a><i>/</i></li>
-					<li><a href="/beer-ecommerce/public/services">Services</a></li>
+					<li><a href="/beer-ecommerce/events">Eventos</a><i>/</i></li>
+					<li><a href="/beer-ecommerce/about">Sobre</a><i>/</i></li>
+					<li><a href="/beer-ecommerce/products">Produtos</a><i>/</i></li>
+					<li><a href="/beer-ecommerce/services">Serviços</a></li>
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left1">

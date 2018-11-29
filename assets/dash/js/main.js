@@ -26,6 +26,32 @@ $(document).ready(function(){
         }
     })
 
+    /* funções de controle do collapse */
+    $("#btn-collapse-remove").click(function(){
+
+        if($("#collapse-remove").hasClass("in")){
+            $("#collapse-remove").collapse("hide")
+        }
+        
+        else{
+            $("#collapse-add").collapse("hide");
+            $("#collapse-remove").collapse("show")
+        }
+    })
+
+    /* funções de controle do collapse */
+    $("#btn-collapse-add").click(function(){
+
+        if($("#collapse-add").hasClass("in")){
+            $("#collapse-add").collapse("hide")
+        }
+        
+        else{
+            $("#collapse-remove").collapse("hide");
+            $("#collapse-add").collapse("show")
+        }
+    })
+    
     /* Função quick search da página de categorias */
     $('input#filtro-categoria').quicksearch('table#tabela-categorias tbody tr');
 

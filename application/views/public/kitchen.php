@@ -2,7 +2,7 @@
 <div class="products-breadcrumb">
 	<div class="container">
 		<ul>
-			<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/home">Home</a><span>|</span></li>
+			<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/home">Home</a><span>|</span></li>
 			<li>Kitchen</li>
 		</ul>
 	</div>
@@ -25,7 +25,7 @@
 			<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 				<ul class="nav navbar-nav nav_1">
 					<?php foreach($dados as $dado){ ?>
-						<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
+						<li><a href="/beer-ecommerce/categoria/<?= $dado['id_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 					<?php } ?>
 				</ul>
 				</div><!-- /.navbar-collapse -->
@@ -92,29 +92,29 @@
 					<img src="<?=base_url("assets/public/images/22.jpg")?>" alt=" " class="img-responsive" />
 					<h4>Bread & Bakery</h4>
 					<ul>
-						<li><a href="/beer-ecommerce/public/bread">Raising rolls</a></li>
-						<li><a href="/beer-ecommerce/public/bread">Butter Croissants</a></li>
-						<li><a href="/beer-ecommerce/public/bread">wheat pita</a></li>
-						<li><a href="/beer-ecommerce/public/bread">Hot dog roll</a></li>
+						<li><a href="/beer-ecommerce/bread">Raising rolls</a></li>
+						<li><a href="/beer-ecommerce/bread">Butter Croissants</a></li>
+						<li><a href="/beer-ecommerce/bread">wheat pita</a></li>
+						<li><a href="/beer-ecommerce/bread">Hot dog roll</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 w3ls_w3l_banner_nav_right_grid_head_grid">
 					<img src="<?=base_url("assets/public/images/23.jpg")?>" alt=" " class="img-responsive" />
 					<h4>Beverages</h4>
 					<ul>
-						<li><a href="/beer-ecommerce/public/drinks">Juices</a></li>
-						<li><a href="/beer-ecommerce/public/drinks">Soft Drinks</a></li>
-						<li><a href="/beer-ecommerce/public/drinks">Energy Drinks</a></li>
+						<li><a href="/beer-ecommerce/drinks">Juices</a></li>
+						<li><a href="/beer-ecommerce/drinks">Soft Drinks</a></li>
+						<li><a href="/beer-ecommerce/drinks">Energy Drinks</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 w3ls_w3l_banner_nav_right_grid_head_grid">
 					<img src="<?=base_url("assets/public/images/24.jpg")?>" alt=" " class="img-responsive" />
 					<h4>Frozen Foods</h4>
 					<ul>
-						<li><a href="/beer-ecommerce/public/frozen">Frozen Snacks</a></li>
-						<li><a href="/beer-ecommerce/public/frozen">Frozen Nonveg</a></li>
-						<li><a href="/beer-ecommerce/public/frozen">Frozen Sweet Corn</a></li>
-						<li><a href="/beer-ecommerce/public/frozen">Frozen Mixed Vegetable</a></li>
+						<li><a href="/beer-ecommerce/frozen">Frozen Snacks</a></li>
+						<li><a href="/beer-ecommerce/frozen">Frozen Nonveg</a></li>
+						<li><a href="/beer-ecommerce/frozen">Frozen Sweet Corn</a></li>
+						<li><a href="/beer-ecommerce/frozen">Frozen Mixed Vegetable</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
@@ -137,7 +137,7 @@
 							<figure>
 								<div class="snipcart-item block" >
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/1.png")?>"/></a>		
+										<a href="/beer-ecommerce/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/1.png")?>"/></a>		
 										<p>fortune sunflower oil</p>
 										<h4>$7.99 <span>$10.00</span></h4>
 									</div>
@@ -170,7 +170,7 @@
 							<figure>
 								<div class="snipcart-item block" >
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/3.png")?>" /></a>		
+										<a href="/beer-ecommerce/single"><img title=" " alt=" " src="<?=base_url("assets/public/images/3.png")?>" /></a>		
 										<p>basmati rise (5 Kg)</p>
 										<h4>$11.99 <span>$15.00</span></h4>
 									</div>
@@ -206,7 +206,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/2.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/2.png")?>" alt=" " class="img-responsive" /></a>
 										<p>Pepsi soft drink (2 Ltr)</p>
 										<h4>$8.00 <span>$10.00</span></h4>
 									</div>
@@ -242,7 +242,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/4.png")?>" alt=" " class="img-responsive" /></a>
+										<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/4.png")?>" alt=" " class="img-responsive" /></a>
 										<p>dogs food (4 Kg)</p>
 										<h4>$9.00 <span>$11.00</span></h4>
 									</div>

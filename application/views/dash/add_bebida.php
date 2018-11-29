@@ -66,11 +66,6 @@
         </div>
 
         <div class = "form-group">
-            <label>Quantidade inicial em estoque (digite 0 caso não tenha em estoque ainda)</label>
-            <input name = "qtd_estoque" class = "form-control" required type = "number" placeholder = "Quantidade em estoque">
-        </div>
-
-        <div class = "form-group">
             <label>Descrição</label>
             <textarea name = "descricao_bebida" type = 'number' class = "form-control" placeholder = "Essa será a descrição que aparecerá para os clientes" required rows= '15'></textarea>
         </div>

@@ -2,7 +2,7 @@
 	<div class="products-breadcrumb">
 		<div class="container">
 			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/home">Home</a><span>|</span></li>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/home">Home</a><span>|</span></li>
 				<li>Branded Foods</li>
 			</ul>
 		</div>
@@ -25,7 +25,7 @@
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<?php foreach($dados as $dado){ ?>
-							<li><a href="/beer-ecommerce/public/categoria?categoria=<?php echo $dado['descricao_categoria'] ?>"><?php echo $dado['descricao_categoria'] ?></a></li>
+							<li><a href="/beer-ecommerce/categoria/<?= $dado['id_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
 						<?php } ?>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
@@ -97,7 +97,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/5.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/5.png")?>" alt=" " class="img-responsive" /></a>
 											<p>knorr instant soup (100 gm)</p>
 											<h4>$3.00 <span>$5.00</span></h4>
 										</div>
@@ -133,7 +133,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/6.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/6.png")?>" alt=" " class="img-responsive" /></a>
 											<p>chings noodles (75 gm)</p>
 											<h4>$5.00 <span>$8.00</span></h4>
 										</div>
@@ -169,7 +169,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/7.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/7.png")?>" alt=" " class="img-responsive" /></a>
 											<p>lahsun sev (150 gm)</p>
 											<h4>$3.00 <span>$5.00</span></h4>
 										</div>
@@ -205,7 +205,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/8.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/8.png")?>" alt=" " class="img-responsive" /></a>
 											<p>premium bake rusk (300 gm)</p>
 											<h4>$5.00 <span>$7.00</span></h4>
 										</div>
@@ -245,7 +245,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/9.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/9.png")?>" alt=" " class="img-responsive" /></a>
 											<p>fresh spinach (palak)</p>
 											<h4>$2.00 <span>$3.00</span></h4>
 										</div>
@@ -281,7 +281,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/10.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/10.png")?>" alt=" " class="img-responsive" /></a>
 											<p>fresh mango dasheri (1 kg)</p>
 											<h4>$5.00 <span>$8.00</span></h4>
 										</div>
@@ -315,7 +315,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/11.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/11.png")?>" alt=" " class="img-responsive" /></a>
 											<p>fresh apple red (1 kg)</p>
 											<h4>$6.00 <span>$8.00</span></h4>
 										</div>
@@ -351,7 +351,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/12.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/12.png")?>" alt=" " class="img-responsive" /></a>
 											<p>fresh broccoli (500 gm)</p>
 											<h4>$4.00 <span>$6.00</span></h4>
 										</div>
@@ -391,7 +391,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/13.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/13.png")?>" alt=" " class="img-responsive" /></a>
 											<p>mixed fruit juice (1 ltr)</p>
 											<h4>$3.00 <span>$4.00</span></h4>
 										</div>
@@ -427,7 +427,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/14.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/14.png")?>" alt=" " class="img-responsive" /></a>
 											<p>prune juice - sunsweet (1 ltr)</p>
 											<h4>$4.00 <span>$5.00</span></h4>
 										</div>
@@ -461,7 +461,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/15.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/15.png")?>" alt=" " class="img-responsive" /></a>
 											<p>coco cola zero can (330 ml)</p>
 											<h4>$3.00 <span>$5.00</span></h4>
 										</div>
@@ -497,7 +497,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="/beer-ecommerce/public/single"><img src="<?=base_url("assets/public/images/16.png")?>" alt=" " class="img-responsive" /></a>
+											<a href="/beer-ecommerce/single"><img src="<?=base_url("assets/public/images/16.png")?>" alt=" " class="img-responsive" /></a>
 											<p>sprite bottle (2 ltr)</p>
 											<h4>$3.00 <span>$4.00</span></h4>
 										</div>

@@ -45,16 +45,20 @@
                         <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
                             <div class="hover14 column">
                             <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+								<?php if($item['status'] == 'checked'){ ?>
                                 <div class="agile_top_brand_left_grid_pos">
                                     <img src="<?=base_url("assets/public/images/offer.png")?>" alt=" " class="img-responsive" />
-                                </div>
+								</div>
+								<?php }?>
                                 <div class="agile_top_brand_left_grid1">
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
                                                 <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
                                                 <p><?= $item['nome_bebida']; ?></p>
-                                                <h4>R$ <?= $item['preco_bebida']; ?><span>$10.00</span></h4>
+												<h4>R$ <?= $item['preco_bebida']; ?><?php if($item['status'] == 'checked'){ ?><span>$10.00</span>
+												<?php };?>
+												</h4>
                                             </div>
                                             <div class="snipcart-details">
                                                 <form action="#" method="post">

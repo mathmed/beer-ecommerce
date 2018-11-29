@@ -33,7 +33,7 @@ Class Bebida_dao extends MY_Dao{
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
             
-                $em_estoque = $bebidas[$i]['qtd_estoque'];
+                $em_estoque = $bebidas[$i]['quantidade'];
 
                 /* verificando a cor da linha do estoque */
                 if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
@@ -42,7 +42,7 @@ Class Bebida_dao extends MY_Dao{
             
             }
         }else{
-            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN tipo_bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN imagem as i ON (i.id_bebida = b.id_bebida) WHERE c.id_categoria = $id_categoria");
+            $bebidas = $this->db->query("SELECT b.nome_bebida, b.id_bebida, b.preco_bebida, c.descricao_categoria, m.nome_marca, e.quantidade, p.status, p.desconto FROM bebida b, categoria c, bebida_has_categoria bc, marca m, estoque e, bebida_has_promocao bp, promocao p WHERE b.id_marca = m.id_marca AND b.id_bebida = e.id_bebida AND b.id_bebida = bc.id_bebida AND bc.id_categoria = c.id_categoria AND b.id_bebida = bp.id_bebida AND bp.id_promocao = p.id_promocao AND c.id_categoria = $id_categoria");
             
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
@@ -51,7 +51,7 @@ Class Bebida_dao extends MY_Dao{
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
             
-                $em_estoque = $bebidas[$i]['qtd_estoque'];
+                $em_estoque = $bebidas[$i]['quantidade'];
 
                 /* verificando a cor da linha do estoque */
                 if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";

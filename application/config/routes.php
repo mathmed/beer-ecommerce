@@ -69,8 +69,6 @@ $route['home'] = "public/home";
 
 
 
-
-
 /* redirecinamento para a tela pública */
 $route['default_controller'] = "public/home";
 
@@ -79,7 +77,8 @@ $route['dash'] = "dash/auth";
 
 
 /* Rotas de variáveis por get */
-$route['beer-ecommerce/dash/bebida/apagar/(:any)/(:num)'] = 'beer-ecommerce/dash/bebida/apagar/$1/$2';
+$route['dash/bebida/apagar/(:any)/(:num)'] = 'dash/bebida/apagar/$1/$2';
+$route['dash/estoque/(:num)'] = 'dash/estoque/index/$1';
 $route['categoria/(:num)'] = 'public/categoria/index/$1';
 $route['single/(:num)'] = 'public/single/index/$1';
 

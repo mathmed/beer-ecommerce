@@ -4,7 +4,7 @@
    <button data-toggle = "collapse" data-target = "#add-categoria" class = "btn btn-adicionar"><i class = "icon-espaco fa fa-plus"></i>Adicionar nova categoria</button>
 </div>
 
-<div class = "collapse" id = "add-categoria">
+<div class = "collapse margin-top margin-bottom" id = "add-categoria">
     <form method = "POST" action = "/beer-ecommerce/dash/categoria/gravar" id = 'form-add-categoria'>
         <div class = "row add-marca-div">
             <div class = "col-md-4">
@@ -20,15 +20,15 @@
 
 
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "margin-top">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-8"><input id = "filtro-categoria" class = "form-control" placeholder = "Pesquise por nome ou onde é aplicada"></div>
     </div>
 </div>
 
 
-<div class = "bebidas">
+<div class = "bebidas margin-top">
     <table class="table table-bordered" id = "tabela-categorias">
         <thead>
             <tr class = "tr-estilo">

@@ -6,12 +6,12 @@
     </div>
 
     <div class = "col-md-2">
-        <a href = "/beer-ecommerce/dash/bebida/estoque/<?= $bebida['id_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_bebida'] ?></button></a>
+        <a href = "/beer-ecommerce/dash/estoque/<?= $bebida['id_bebida']?>"><button class = "btn btn-auxiliar"><i class = "fa fa-warehouse icon-espaco"></i>Gerenciar estoque de <?= $bebida['nome_bebida'] ?></button></a>
     </div>
 
 </div>
 
-<div class = "form-add-bebidas">
+<div class = "form-add-bebidas margin-top">
 
     <?= form_open_multipart('dash/bebida/gravar', "id='form-editar-bebida'") ?>
         <input type = "hidden" name = "acao_bebida" value = "editar"> 

@@ -4,7 +4,7 @@
 </div>
 
 
-<div class = "collapse" id = "collapse-add-promocao">
+<div class = "collapse margin-top" id = "collapse-add-promocao">
     <form method = "POST" action = "/beer-ecommerce/dash/promocao/gravar" id = 'form-add-promocao'>
         <input type = "hidden" name = "tipo" value = "adicionar">
         <div class = "row">
@@ -36,10 +36,9 @@
     </form>
 </div>
 
-<div class = "div-promocoes">
+<div class = "margin-top">
 
     <table class="table table-bordered" id = "tabela-fornecedores">
-            
         <thead>
             <tr class = "tr-estilo">
                 <th class="text-center">ID</th>

@@ -14,7 +14,6 @@ Class Bebida_model extends CI_Model{
     public $id_marca;
     public $tipo_bebida;
     public $status_bebida;
-    public $qtd_estoque;
 
     /* Construtor do model de bebidas */
     public function __constructor($dados){
@@ -28,7 +27,6 @@ Class Bebida_model extends CI_Model{
         $this->id_marca = $dados['id_marca'];
         $this->tipo_bebida = $dados['tipo_bebida'];
         $this->status_bebida = $dados['status_bebida'];
-        $this->qtd_estoque = $dados['qtd_estoque'];
     }
 
 }

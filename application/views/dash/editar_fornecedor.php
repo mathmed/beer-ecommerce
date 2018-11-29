@@ -11,7 +11,7 @@
 </div>
 
 
-<div class = "editar-fornecedor">
+<div class = "editar-fornecedor margin-top">
 
 <?= form_open_multipart('dash/fornecedor/gravar', "id='form-att-fornecedor'") ?>
     <input type = 'hidden' name = 'id_fornecedor' value = '<?= $fornecedor[0]['id_fornecedor'] ?>'>
@@ -107,7 +107,7 @@
             <input type = 'hidden' name = 'id_fornecedor' value = '<?= $fornecedor[0]['id_fornecedor'] ?>'>
             <input type = 'hidden' name = 'id_contato' value = '<?= $fornecedor[0]['id_contato'] ?>'>
             <input type = 'hidden' name = 'id_endereco' value = '<?= $fornecedor[0]['id_endereco'] ?>'>
-            <button type="submit" class="btn btn-voltar">Deletar</button>
+            <button type="submit" class="btn btn-voltar margin-left">Deletar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         </form> 
       </div>

@@ -47,7 +47,7 @@
 			<!-- Left nav -->
 			<div class = "col-md-4 side-bar" id = "side-bar">
 				<div class="logo text-center">
-					<a class = 'logo-text' id = "logo" href="home.php">duff club admin</a>
+					<a class = 'logo-text' id = "logo" href="/beer-ecommerce/dash/base">duff club admin</a>
 					<h1 id = "icone" class = 'fa fa-arrow-right rotate'></h1>
 				</div>
 
@@ -59,16 +59,16 @@
 							<li><a href='/beer-ecommerce/dash/base'>Início</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_relatorios)) echo $cor_ul_relatorios;?>'>
-							<li><a href='home.php?page=graficos'><i class='fa fa-chart-line icon-espaco'></i></a></li>
-							<li><a href='home.php?page=graficos'>Relatórios</a></li>
+							<li><a href='/beer-ecommerce/dash/graficos'><i class='fa fa-chart-line icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/graficos'>Relatórios</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_usuarios)) echo $cor_ul_usuarios;?>'>
-							<li><a href='home.php?page=usuarios'><i class='fa fa-users icon-espaco'></i></a></li>
-							<li><a href='home.php?page=usuarios'>Usuários</a></li>
+							<li><a href='/beer-ecommerce/dash/usuarios'><i class='fa fa-users icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/usuarios'>Usuários</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_configuracoes)) echo $cor_ul_configuracoes;?>'>
-							<li><a href='home.php?page=configuracoes'><i class='fa fa-cogs icon-espaco'></i></a></li>
-							<li><a href='home.php?page=configuracoes'>Configurações</a></li>
+							<li><a href='/beer-ecommerce/dash/configuracoes'><i class='fa fa-cogs icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/configuracoes'>Configurações</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_alertar)) echo $cor_ul_alertar;?>'>
 							<li><a href='/beer-ecommerce/dash/alertar'><i class='fa fa-exclamation-triangle icon-espaco'></i></a></li>

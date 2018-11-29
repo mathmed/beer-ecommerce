@@ -55,9 +55,12 @@
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
                                                 <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
-                                                <p><?= $item['nome_bebida']; ?></p>
-												<h4>R$ <?= $item['preco_bebida']; ?><?php if($item['status'] == 'checked'){ ?><span>$10.00</span>
-												<?php };?>
+												<p><?= $item['nome_bebida']; ?></p>
+												<?php if($item['status'] == 'checked'){ ?>
+													<h4>R$ <?= $item['preco_bebida'] - (($item['preco_bebida']/100) * $item['desconto']) ?> <span>$<?= $item['preco_bebida']; ?></span>
+												<?php }else{?>
+													<h4>R$ <?= $item['preco_bebida'] ?>
+												<?php }?>
 												</h4>
                                             </div>
                                             <div class="snipcart-details">

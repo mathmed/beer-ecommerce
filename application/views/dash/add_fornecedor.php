@@ -6,11 +6,11 @@
     </div>
 
     <div class = "col-md-8">
-        <h1>Adicionar novo fornecedor</h1>
+        <h1 class = "">Adicionar novo fornecedor</h1>
     </div>
 </div>
 
-<div class = "form-add-bebidas">
+<div class = "form-add-bebidas margin-top">
 
     <?= form_open_multipart('dash/fornecedor/gravar', "id='form-add-fornecedor'") ?>
         <input type = 'hidden' name = 'tipo' value = 'gravar'>

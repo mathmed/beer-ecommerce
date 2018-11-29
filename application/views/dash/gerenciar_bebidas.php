@@ -4,9 +4,9 @@
     <a href = "/beer-ecommerce/dash/bebida/add_bebida"><button class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar nova bebida</button></a>
 </div>
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "margin-top">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-3"><input id = "filtro-nome" class = "form-control" placeholder = "Nome do produto"></div>
         <div class = "col-md-3">
             <select class = "form-control" name = 'filtro-preco'>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class = "row row-filtro">
+    <div class = "row margin-top">
         <div class = "col-md-3">   
             <select class = "form-control">
                 <option>Todas as marcas</option>
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<div class = "bebidas">
+<div class = "bebidas margin-top">
 
     <table class="table table-bordered" id = "tabela-bebidas">
             

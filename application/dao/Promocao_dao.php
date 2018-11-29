@@ -46,7 +46,7 @@ Class Promocao_dao extends MY_Dao{
                     foreach($this->promocao_model->bebidas_desconto as $bebida)
                         
                         /* inserindo a relação */
-                        $this->db->insert("promocao_has_tipo_bebida", 
+                        $this->db->insert("bebida_has_promocao", 
                             ["id_bebida" => (int)$bebida, "id_promocao" => $id]);
     
                     /* Adicionando mensagen de sucesso na sessão */
@@ -78,15 +78,15 @@ Class Promocao_dao extends MY_Dao{
 
             /* removendo a promoção das bebidas atuais atuais */
             $this->db->where("id_promocao = $id");
-            $this->db->delete("promocao_has_tipo_bebida");
+            $this->db->delete("bebida_has_promocao");
             
             /* adicionando as novas bebidas */
             foreach($dados['bebidas_desconto'] as $key => $value)
 
                 /* executando a query */
-                $this->db->query("INSERT INTO promocao_has_tipo_bebida (id_bebida, id_promocao)
+                $this->db->query("INSERT INTO bebida_has_promocao (id_bebida, id_promocao)
                 SELECT $value, $id FROM DUAL WHERE NOT EXISTS (
-                    SELECT * FROM promocao_has_tipo_bebida WHERE id_bebida = $value AND id_promocao = $id
+                    SELECT * FROM bebida_has_promocao WHERE id_bebida = $value AND id_promocao = $id
                 );");
 
             
@@ -127,7 +127,7 @@ Class Promocao_dao extends MY_Dao{
             $promocao = $this->db->get_where("promocao", "id_promocao = $id");
 
             /* recuperando as relações de bebidas e promoções */
-            $relacoes = $this->db->get_where("promocao_has_tipo_bebida", "id_promocao = $id");
+            $relacoes = $this->db->get_where("bebida_has_promocao", "id_promocao = $id");
 
 
             /* retornando o array */

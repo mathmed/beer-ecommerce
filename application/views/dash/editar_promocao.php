@@ -5,8 +5,7 @@
     </div>
 </div>
 
-
-<div>
+<div class = "margin-top">
 
  <form method = 'POST' action = '/beer-ecommerce/dash/promocao/gravar' id = 'form-att-promocao'>
  
@@ -26,7 +25,7 @@
         </div>
     </div>
 
-    <div class = "row div-promocoes">
+    <div class = "row div-promocoes margin-top">
         <div class = "col-md-12">
             <label>Bebidas com desconto aplicado</label>
             <select multiple='' name='bebidas_desconto[]' class='ui fluid normal dropdown' id = 'bebidas_desconto' required>
@@ -51,7 +50,7 @@
             </select>
         </div>
     </div>
-    <div class='center div-promocoes' id = 'div-att-promocao'>
+    <div class='center div-promocoes margin-top' id = 'div-att-promocao'>
         <button type='submit' class='btn btn-adicionar' id = 'btn-att-promocao'>Atualizar</button>
     </div>
 </form>

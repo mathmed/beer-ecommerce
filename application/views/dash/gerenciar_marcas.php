@@ -4,7 +4,7 @@
    <button data-toggle = "collapse" data-target = "#add-marca" class = "btn btn-adicionar"><i class = " icon-espaco fa fa-plus"></i>Adicionar nova marca</button>
 </div>
 
-<div class = "collapse" id = "add-marca">
+<div class = "collapse margin-top margin-bottom" id = "add-marca">
     <form method = 'POST' action = '/beer-ecommerce/dash/marca/gravar' id = 'form-add-marca'>
         <div class = "row add-marca-div">
             <div class = "col-md-5">
@@ -20,14 +20,14 @@
 </div>
 
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "margin-top">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-8"><input id = "filtro-marca" class = "form-control" placeholder = "Pesquise o nome ou ID da marca"></div>
     </div>
 </div>
 
-<div class = "bebidas">
+<div class = "bebidas margin-top">
 
     <table class="table table-bordered" id = "tabela-marcas">
             

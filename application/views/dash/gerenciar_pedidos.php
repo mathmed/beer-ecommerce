@@ -1,8 +1,8 @@
 <?= $this->session->flashdata('gravar_dados_pedidos');?>
 
-<div class = "filtro-bebidas">
-    <p>Filtre o que deseja ver</p>
-    <div class = "row row-filtro">
+<div class = "">
+    <p class = "title">Filtre o que deseja ver</p>
+    <div class = "row">
         <div class = "col-md-3">
             <label class = "label">Pedidos de:</label>
             <input type = "date" class = "form-control">
@@ -15,7 +15,7 @@
     <div class = 'margin-top'><a href = ""><button class = "btn btn-filtrar"><i class = " icon-espaco fa fa-filter"></i>Filtrar</button></a></div>
 </div>
 
-<div class = "pedidos">
+<div class = "pedidos margin-top">
 
     <table class="table table-bordered" id = "tabela-pedidos">
             

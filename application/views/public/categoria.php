@@ -57,7 +57,7 @@
                                                 <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
 												<p><?= $item['nome_bebida']; ?></p>
 												<?php if($item['status'] == 'checked'){ ?>
-													<h4>R$ <?= $item['preco_bebida'] - (($item['preco_bebida']/100) * $item['desconto']) ?> <span>$<?= $item['preco_bebida']; ?></span>
+													<h4>R$ <?= $item['preco_bebida'] - (($item['preco_bebida']/100) * $item['desconto']) ?> <span>R$ <?= $item['preco_bebida']; ?></span>
 												<?php }else{?>
 													<h4>R$ <?= $item['preco_bebida'] ?>
 												<?php }?>
@@ -70,9 +70,14 @@
                                                         <input type="hidden" name="add" value="1" />
                                                         <input type="hidden" name="business" value=" " />
                                                         <input type="hidden" name="item_name" value="<?= $item['nome_bebida']; ?>" />
-                                                        <input type="hidden" name="amount" value="<?= $item['preco_bebida']; ?>" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
+														<input type="hidden" name="amount" value="<?= $item['preco_bebida']; ?>" />
+														<?php if($item['status'] == 'checked'){ ?>
+															<input type="hidden" name="discount_amount" value="<?= ($item['preco_bebida']/100) * $item['desconto'] ?>" />
+														<?php }else{?>
+															<input type="hidden" name="discount_amount" value="0" />
+														<?php }?>
+														<input type="hidden" name="currency_code" value="BRL" />
+														<input type="hidden" name="id_bebida" value="<?= $item['id_bebida'] ?>" />
                                                         <input type="hidden" name="return" value=" " />
                                                         <input type="hidden" name="cancel_return" value=" " />
                                                         <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />

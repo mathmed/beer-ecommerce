@@ -40,7 +40,6 @@
 			<div class="w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub">
 				<h3 class="w3l_fruit"><?= $categoria ?></h3>
 				<div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
-
                     <?php foreach($bebidas as $item){ ?>
                         <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
                             <div class="hover14 column">
@@ -54,7 +53,7 @@
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=base_url("assets/public/images/57.png")?>" alt=" " class="img-responsive" /></a>
+                                                <a href="/beer-ecommerce/single/<?= $item['id_bebida']?>"><img src="<?=$item['imagens']['src']?>" alt=" " class="img-responsive" /></a>
 												<p><?= $item['nome_bebida']; ?></p>
 												<?php if($item['status'] == 'checked'){ ?>
 													<h4>R$ <?= $item['preco_bebida'] - (($item['preco_bebida']/100) * $item['desconto']) ?> <span>R$ <?= $item['preco_bebida']; ?></span>

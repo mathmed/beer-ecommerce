@@ -64,7 +64,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="w3l_header_right">
 			<ul>
 				<li class="dropdown profile_details_drop">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+				<?php if(!$this->session->has_userdata("user")){ ?>
+
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Olá,Faça login <i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
 					<div class="mega-dropdown-menu">
 						<div class="w3ls_vegetables">
 							<ul class="dropdown-menu drp-mnu">
@@ -73,6 +75,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</ul>
 						</div>                  
 					</div>	
+					<?php } else{ ?>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Olá<i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+					<div class="mega-dropdown-menu">
+						<div class="w3ls_vegetables">
+							<ul class="dropdown-menu drp-mnu">
+								<li><a href="/beer-ecommerce/pedidosUsuario">Meus pedidos</a></li> 
+								<li><a href="/beer-ecommerce/alterarDados">Alterar dados</a></li>
+								<li><a href="\beer-ecommerce/public/login/deslogar">Deslogar</a></li>
+
+							</ul>
+						</div>                  
+					</div>	
+					<?php }?>
 				</li>
 			</ul>
 		</div>
@@ -104,7 +119,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="special_items">
-					<li><a href="/beer-ecommerce/events">Eventos</a><i>/</i></li>
 					<li><a href="/beer-ecommerce/about">Sobre</a><i>/</i></li>
 					<li><a href="/beer-ecommerce/products">Produtos</a><i>/</i></li>
 					<li><a href="/beer-ecommerce/services">Serviços</a></li>

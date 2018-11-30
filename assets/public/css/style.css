@@ -536,6 +536,7 @@ ul.dropdown-menu.drp-mnu li a i {
 	border:1px solid #D7D7D7;
 }
 .agile_top_brand_left_grid1 img{
+	height: 200px;
 	margin:0 auto;
 }
 .agile_top_brands_grids{
@@ -1251,8 +1252,9 @@ button.submit.check_out{
 	padding-top: 7em;
 }
 .w3l_banner_nav_right_banner3{
-	background:url(../images/12.jpg) no-repeat 0px 0px;
+	background:url(../images/image-single.jpg) no-repeat 0px 0px;
 	background-size:cover;
+	background-position: center;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;

@@ -185,24 +185,52 @@ $(document).ready(function(){
 <script src="<?=base_url("assets/public/js/minicart.js")?>"></script>
 <script>
 		paypal.minicart.render();
-
-		paypal.minicart.cart.on('<?=base_url("assets/public/checkout")?>', function (evt) {
+		paypal.minicart.cart.on('checkout', function (evt) {
 			var items = this.items(),
 				len = items.length,
 				total = 0,
 				i;
-
+			
+			var dados_id = new Array();
+			var dados_quantidade = new Array();
 			// Count the number of each item in the cart
 			for (i = 0; i < len; i++) {
 				total += items[i].get('quantity');
+				dados_id[i] = items[i]['_data']['id_bebida'];
+				dados_quantidade[i] = items[i]['_data']['quantity'];
 			}
-
+			
 			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+				alert('A . Please add more to your shopping cart before checking out');
 				evt.preventDefault();
 			}
+			$.ajax({	
+				type: 'post',
+				url: 'checkout.php',
+				data: { 'dados_id':  dados_id, 'dados_quantidade': dados_quantidade},
+			});
+
+			// $.post(url, function(result) {
+			// 	data
+			// });
+
+			// $.post('checkout.php' , {'dados_id':  dados_id, 'dados_quantidade': dados_quantidade} , function(data){
+			// 	TODO : handle response
+			// });
 		});
 
 	</script>
+
+	<?php
+		// $arrDados = json_decode($_POST['dados']);
+		// print_r($arrDados);
+		$dados_id = $_POST["dados_id"];
+		$dados_quantidade = $_POST["dados_quantidade"];
+		print_r($_POST);
+		
+		
+	
+	
+	?>
 </body>
 </html>

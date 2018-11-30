@@ -17,8 +17,11 @@ Class Bebida_dao extends MY_Dao{
 
     /* função para retornar todas as bebidas do estoque (ou algumas em caso de filtro) */
     public function getBebidas($id_categoria = NULL){
-        /* iniciando as query das bebidas */
-        if($id_categoria == NULL){
+
+        /* verificando se foi passado algum filtro por parâmetro */
+        if(!$id_categoria){
+
+            /* iniciando as query das bebidas */
             $this->db->select("*");
             $this->db->from("bebida");
             $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
@@ -29,16 +32,22 @@ Class Bebida_dao extends MY_Dao{
             
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
+
                 /* Fazendo um request na tebela estoque e guardando o resultado no array de retorno */
                 $bebidas[$i]['qtd_estoque'] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0]['SUM(atual)'];
-                
+
+                /* verificando se retornou algum registro do estoque, caso não tenha retornado, setar valor em 0 */
+                if(!$bebidas[$i]['qtd_estoque']) $bebidas[$i]['qtd_estoque'] = 0;
+
                 $em_estoque = $bebidas[$i]['qtd_estoque'];
-                /* verificando a cor da linha do estoque */
+
+                /* verificando a cor da linha do estoque (na interface) */
                 if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
                 else if($em_estoque < 50) $bebidas[$i]["cor_estoque"] = "estoque-laranja";
                 else $bebidas[$i]["cor_estoque"] = "estoque-verde";
             
             }
+
         }else{
             $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN bebida_has_promocao as bp ON (b.id_bebida = bp.id_bebida) INNER JOIN promocao as p ON (bp.id_promocao = p.id_promocao) WHERE c.id_categoria = $id_categoria");
             

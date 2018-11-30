@@ -20,11 +20,9 @@
 			<div class="col-md-3 w3_footer_grid">
 				<h3>Informações</h3>
 				<ul class="w3_footer_grid_list">
-					<li><a href="/beer-ecommerce/events">Events</a></li>
 					<li><a href="/beer-ecommerce/about">Sobre</a></li>
 					<li><a href="/beer-ecommerce/products">Produtos</a></li>
 					<li><a href="/beer-ecommerce/services">Serviços</a></li>
-					<li><a href="/beer-ecommerce/short-codes">Short Codes</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
@@ -36,26 +34,14 @@
 				</ul>
 			</div>
 			<div class="col-md-3 w3_footer_grid">
-				<h3>what in stores</h3>
+				<h3>O que vendemos</h3>
 				<ul class="w3_footer_grid_list">
-					<li><a href="/beer-ecommerce/pet">Pet Food</a></li>
-					<li><a href="/beer-ecommerce/frozen">Frozen Snacks</a></li>
-					<li><a href="/beer-ecommerce/kitchen">Kitchen</a></li>
-					<li><a href="/beer-ecommerce/products">Branded Foods</a></li>
-					<li><a href="/beer-ecommerce/household">Households</a></li>
+				<?php foreach($dados as $dado){ ?>
+					<li><a href="/beer-ecommerce/categoria/<?= $dado['id_categoria'] ?>"><?= $dado['descricao_categoria'] ?></a></li>
+				<?php } ?>
 				</ul>
 			</div>
-			<div class="col-md-3 w3_footer_grid">
-				<h3>twitter posts</h3>
-				<ul class="w3_footer_grid_list1">
-					<li><label class="fa fa-twitter" aria-hidden="true"></label><i>01 day ago</i><span>Non numquam <a href="#">http://sd.ds/13jklf#</a>
-						eius modi tempora incidunt ut labore et
-						<a href="#">http://sd.ds/1389kjklf#</a>quo nulla.</span></li>
-					<li><label class="fa fa-twitter" aria-hidden="true"></label><i>02 day ago</i><span>Con numquam <a href="#">http://fd.uf/56hfg#</a>
-						eius modi tempora incidunt ut labore et
-						<a href="#">http://fd.uf/56hfg#</a>quo nulla.</span></li>
-				</ul>
-			</div>
+
 			<div class="clearfix"> </div>
 			<div class="agile_footer_grids">
 				<div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
@@ -79,7 +65,7 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="wthree_footer_copy">
-				<p>© 2016 Grocery Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<p>© 2018 Duff Club. Todos os direitos reservados | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 			</div>
 		</div>
 	</div>

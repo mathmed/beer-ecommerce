@@ -46,7 +46,7 @@
 <!-- Informações -->
 
 
-<!-- Ultimo treinamento adicionado -->
+
 <div class = 'ultimo-treinamento'>
 
     <div class = 'div-titulo-ultimo-tre'>
@@ -68,7 +68,7 @@
         </div>
     </div>
 </div>
-<!-- /Último treinamento adicionado -->
+
 </div>
 
 </div>

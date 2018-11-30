@@ -124,6 +124,22 @@ Class Bebida_dao extends MY_Dao{
             /* adicionando as categorias no retorno */ 
             $query[0]["imagens"] = $imagens;
 
+            /* verificando se tem promoção */
+            $this->db->select("status, desconto, bebida_has_promocao.id_promocao");
+            $this->db->from("bebida_has_promocao");
+            $this->db->join("promocao", "promocao.id_promocao = bebida_has_promocao.id_promocao");
+            $this->db->where("id_bebida = $id");
+
+            /* Requisitando as promocoes  */
+            $promocao = $this->db->get();
+            $promocao = $promocao->result_array();
+            
+            /* adicionando a promocao no retorno caso exista*/
+            if($promocao != NULL){
+                $query[0]["promocao"] = $promocao;
+            } 
+            
+
             /* adicionando a quantidade em estoque */
             $query[0]["qtd_estoque"] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = $id")->result_array()[0]['SUM(atual)'];
 

@@ -3,7 +3,7 @@
 		<div class="container">
 			<ul>
 				<li><i class="fa fa-home" aria-hidden="true"></i><a href="/beer-ecommerce/public/home">Home</a><span>|</span></li>
-				<li>Checkout</li>
+				<li>Carrinho</li>
 			</ul>
 		</div>
 	</div>
@@ -34,10 +34,10 @@
 		<div class="w3l_banner_nav_right">
 <!-- about -->
 		<div class="privacy about">
-			<h3>Chec<span>kout</span></h3>
+			<h3>Carr<span>inho</span></h3>
 			
 	      <div class="checkout-right">
-					<h4>Your shopping cart contains: <span>3 Products</span></h4>
+					<h4>Seu carrinho contém: <span>3 Products</span></h4>
 				<table class="timetable_sub">
 					<thead>
 						<tr>

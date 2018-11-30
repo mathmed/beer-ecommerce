@@ -17,30 +17,22 @@ Class Bebida_dao extends MY_Dao{
 
     /* função para retornar todas as bebidas do estoque (ou algumas em caso de filtro) */
     public function getBebidas($id_categoria = NULL){
-
         /* iniciando as query das bebidas */
         if($id_categoria == NULL){
             $this->db->select("*");
             $this->db->from("bebida");
             $this->db->join("marca", "marca.id_marca = bebida.id_marca", "inner");
-
             $bebidas = $this->db->get();
-
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
             $bebidas = $bebidas->result_array;
-
             
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
-
                 /* Fazendo um request na tebela estoque e guardando o resultado no array de retorno */
                 $bebidas[$i]['qtd_estoque'] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0]['SUM(atual)'];
-
-                if(!$bebidas[$i]['qtd_estoque']) $bebidas[$i]['qtd_estoque'] = 0;
-
+                
                 $em_estoque = $bebidas[$i]['qtd_estoque'];
-
                 /* verificando a cor da linha do estoque */
                 if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
                 else if($em_estoque < 50) $bebidas[$i]["cor_estoque"] = "estoque-laranja";
@@ -48,7 +40,7 @@ Class Bebida_dao extends MY_Dao{
             
             }
         }else{
-            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN imagem as i ON (i.id_bebida = b.id_bebida) WHERE c.id_categoria = $id_categoria");
+            $bebidas = $this->db->query("SELECT * FROM bebida as b INNER JOIN bebida_has_categoria as bc ON (bc.id_bebida = b.id_bebida) INNER JOIN categoria as c ON (c.id_categoria = bc.id_categoria) INNER JOIN marca as m ON (m.id_marca = b.id_marca) INNER JOIN bebida_has_promocao as bp ON (b.id_bebida = bp.id_bebida) INNER JOIN promocao as p ON (bp.id_promocao = p.id_promocao) WHERE c.id_categoria = $id_categoria");
             
             /* Verificando se retornou algo e guardando o resultado */
             if($bebidas) $bebidas->result_array();
@@ -56,8 +48,10 @@ Class Bebida_dao extends MY_Dao{
             
             /* Código para verificação de quantidade de bebidas em estoque */
             for($i = 0; $i < count($bebidas); $i++){
-            
+                $bebidas[$i]['qtd_estoque'] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0]['SUM(atual)'];
                 $em_estoque = $bebidas[$i]['qtd_estoque'];
+                
+                $bebidas[$i]['imagens'] = $this->db->query("SELECT * FROM imagem i WHERE i.id_bebida = " . $bebidas[$i]['id_bebida'])->result_array()[0];
 
                 /* verificando a cor da linha do estoque */
                 if($em_estoque < 10) $bebidas[$i]["cor_estoque"] = "estoque-vermelho";
@@ -67,10 +61,8 @@ Class Bebida_dao extends MY_Dao{
             }
         }
         
-
         /* retornando o array */
         return $bebidas;
-
     }
 
     /* função para retornar uma bebida específica por nome */
@@ -131,6 +123,22 @@ Class Bebida_dao extends MY_Dao{
             
             /* adicionando as categorias no retorno */ 
             $query[0]["imagens"] = $imagens;
+
+            /* verificando se tem promoção */
+            $this->db->select("status, desconto, bebida_has_promocao.id_promocao");
+            $this->db->from("bebida_has_promocao");
+            $this->db->join("promocao", "promocao.id_promocao = bebida_has_promocao.id_promocao");
+            $this->db->where("id_bebida = $id");
+
+            /* Requisitando as promocoes  */
+            $promocao = $this->db->get();
+            $promocao = $promocao->result_array();
+            
+            /* adicionando a promocao no retorno caso exista*/
+            if($promocao != NULL){
+                $query[0]["promocao"] = $promocao;
+            } 
+            
 
             /* adicionando a quantidade em estoque */
             $query[0]["qtd_estoque"] = $this->db->query("SELECT SUM(atual) FROM estoque WHERE id_bebida = $id")->result_array()[0]['SUM(atual)'];
@@ -256,7 +264,7 @@ Class Bebida_dao extends MY_Dao{
 
     }
 
-    /* função para atualizar status de uma bebida */
+    /* função para atualizar de uma bebida */
     public function attStatusBebida($id = NULL, $status = NULL ){
         
         /* verifica se os dados foram enviados */

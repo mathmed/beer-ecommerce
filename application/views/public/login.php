@@ -1,3 +1,6 @@
+<?= $this->session->flashdata('auth');?>
+
+
 <!-- products-breadcrumb -->
 	<div class="products-breadcrumb">
 		<div class="container">
@@ -42,9 +45,10 @@
 				  </div>
 				  <div class="form">
 					<h2>Já sou cliente</h2>
-					<form action="#" method="post">
-					  <input type="text" name="Username" placeholder="Usuario" required=" ">
-					  <input type="password" name="Password" placeholder="Senha" required=" ">
+					<form action="\beer-ecommerce/public/login/logar" method="post">
+					  <input type="text" name="cpf" placeholder="CPF" required>
+					  <input type="password" name="senha" placeholder="Senha" required>
+						<input type = "hidden" name = "tipo_auth" value = "user">
 					  <input type="submit" value="Entrar">
 					</form>
 				  </div>
@@ -87,25 +91,26 @@
 				<div class="wthree_news_top_serv_btm_grid_icon">
 					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 				</div>
-				<h3>Nam libero tempore</h3>
-				<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
-					saepe eveniet ut et voluptates repudiandae sint et.</p>
+				<h3>Compre sem sair de casa</h3>
+				<p>Comodidade e facilidade para adquirir sua bebida preferida,
+				sem precisar sai do conforto da sua casa.</p>
 			</div>
 			<div class="col-md-4 wthree_news_top_serv_btm_grid">
 				<div class="wthree_news_top_serv_btm_grid_icon">
 					<i class="fa fa-bar-chart" aria-hidden="true"></i>
 				</div>
-				<h3>officiis debitis aut rerum</h3>
-				<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
-					saepe eveniet ut et voluptates repudiandae sint et.</p>
+				<h3>Melhores Preços</h3>
+				<p>Os menores preço do mercado online e lojas fisicas.
+					.</p>
 			</div>
 			<div class="col-md-4 wthree_news_top_serv_btm_grid">
 				<div class="wthree_news_top_serv_btm_grid_icon">
 					<i class="fa fa-truck" aria-hidden="true"></i>
 				</div>
-				<h3>eveniet ut et voluptates</h3>
-				<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
-					saepe eveniet ut et voluptates repudiandae sint et.</p>
+				<h3>Entrega</h3>
+				<p>O prazo de entrega se inicia após o pedido ser entregue para a transportadora.
+					Você será informado via e-mail o passo-a-passo de liberação de sua compra e despacho para transporte até seu endereço.
+					Caso tenha alguma dúvida, por favor entre em contato através da nossa Central de Atendimentos..</p>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

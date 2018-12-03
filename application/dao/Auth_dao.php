@@ -23,16 +23,22 @@ Class Auth_dao extends CI_Model{
 
                 /* inserindo dados na sessão */
 
-                if($dados["tipo_auth"] == "user") $this->session->set_userdata("user", $retorno->result_array()[0]);
-                if($dados["tipo_auth"] == "adm") $this->session->set_userdata("adm", $retorno->result_array()[0]);
+                if($dados["tipo_auth"] == "user"){ 
+                    $this->session->set_userdata("user", $retorno->result_array()[0]);
+                    redirect("public/home");
+                }
+                if($dados["tipo_auth"] == "adm"){ 
+                    $this->session->set_userdata("adm", $retorno->result_array()[0]);
+                    redirect("dash/base");
+                }
 
+                
                 /* redirecionando */
-                redirect("dash/base");
             }
 
             /* inserir mensagem de erro e retornar falso */
             $this->session->set_flashdata('auth', "<div class = 'alert alert-danger'>Usuário e/ou senha incorretos</div>");
-            redirect("dash/");
+            redirect("/");
         }
     }
 

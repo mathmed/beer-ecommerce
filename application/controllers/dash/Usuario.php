@@ -2,14 +2,33 @@
 /* Não permitindo que a URL seja acessada diretamente */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/* Controlador do model de cadastro de clientes */
+/* Controlador do model de usuarios */
 class Usuario extends CI_Controller {
-	
+
+    /* construtor da classe */
+    public function __construct(){
+
+        /* carregando os models e DAOs necessários */
+        parent::__construct();
+        $this->load->dao("usuario_dao", "", TRUE);
+    }
+        
 	/* primeira função que é chamada (carregando a tela) */
 	public function index(){
 
-		/* Carregando o model (nome e apelido) */
-		$this->load->model("dash/usuario_model", "usuario");
+        /* verifica se o adm está logado */
+        if(!$this->session->has_userdata("adm")) redirect("/");
+        
+        /* carregando os usuários cadastrados */
+        $data['usuarios'] = $this->usuario_dao->getUsers();
+
+        /* dados que serão passados como parâmetro */
+        /* enviando como parâmetro a cor da ul */
+        $data['cor_ul_usuarios'] = 'ul-marcada';
+
+        /* carregando as views */
+        $this->load->view("dash/base.php", $data);
+        $this->load->view("dash/usuarios.php");
 		
     }
     

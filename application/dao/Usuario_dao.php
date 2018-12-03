@@ -4,6 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /* Dao de controle do usuario */
 Class Usuario_dao extends CI_Model{
 
+    /* função para retornar usuários do banco de dados */
+    public function getUsers(){
+        return $this->db->get("usuario")->result_array();
+    }    
+
     /* Função para retornar um usuário do db */
     public function getUserByCPF($cpf = NULL, $tipo_user = NULL){
 

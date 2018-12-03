@@ -308,4 +308,10 @@ $(document).ready(function(){
         $("#btn-att-promocao").remove();
         $("#div-att-promocao").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
     })
+
+    $("#form-add-status").submit(function(){
+        $("#btn-add-status").remove();
+        $("#div-add-status").append("<i class='fas fa-spinner fa-pulse custom-spinner-green'></i>");
+    })
+    
 }); 

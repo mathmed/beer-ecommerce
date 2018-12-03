@@ -11,13 +11,13 @@
 
     <div class = "margin-top margin-bottom collapse" id = "novo-status">
 
-        <form method = "POST" action = "/beer-ecommerce/dash/configuracoes/gravarStatus" >
+        <form id = "form-add-status" method = "POST" action = "/beer-ecommerce/dash/configuracoes/gravarStatus" >
             <div class = "row">
                 <div class = "col-md-8">
                     <input required name = "descricao_status" class = "form-control" placeholder = "Descrição do status, ex: Em andamento">
                 </div>
-                <div class = "col-md-4">
-                    <button type = "submit" class = "btn btn-adicionar">Gravar</button>
+                <div class = "col-md-4" id = "div-add-status">
+                    <button id = "btn-add-status" type = "submit" class = "btn btn-adicionar">Gravar</button>
                 </div>
             </div>
         </form>

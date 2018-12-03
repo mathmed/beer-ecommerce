@@ -392,7 +392,7 @@
 	transition: .8s all;
 }
 
-.btn-filtrar:hover{
+.btn-filtrar:hover, .btn-filtrar:focus, .btn-filtrar:active{
 	color: #2F5671;
 	background:white;
 }
@@ -417,7 +417,7 @@
 	transition: .8s all;
 }
 
-.btn-voltar:hover, .btn-voltar:focus{
+.btn-voltar:hover, .btn-voltar:focus, .btn-voltar:active{
 	color: red;
 	background:white;
 }

@@ -147,6 +147,47 @@ $(document).ready(function(){
 
     })
 
+    /* Função para abrir o modal da página de status dinâmicamente */
+    $(".editar-status").click(function(){
+        
+        /* pegando id e nome da marca */
+        var id = $(this).attr("id-status");
+        var nome = $(this).attr("nome-status").replace(/_/g, " ");
+        var nome_id = $(this).attr("nome-status");
+        
+
+        var modal = "<div id = "+nome_id+id+" class= 'modal fade' tabindex='-1' role='dialog' data-backdrop = 'static'>"+
+                        "<div class='modal-dialog' role='document'>"+
+                            "<div class='modal-content'>"+
+                                "<div class='modal-header'>"+
+                                    "<h5 class='modal-title'>Editar Status "+nome+"</h5>"+
+                                    "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
+                                    "<span aria-hidden='true'>&times;</span>"+
+                                    "</button>"+
+                                "</div>"+
+                                "<form method = 'POST' action = '/beer-ecommerce/dash/configuracoes/gravarStatus'>"+
+                                    "<div class='modal-body'>"+
+                                        "<label>Descrição do Status</label>"+
+                                        "<input name = 'descricao_status' value = '"+nome+"' class = 'form-control'>"+
+                                        "<input type = 'hidden' name = 'id_status' value = '"+id+"'>"+
+                                        "<input type = 'hidden' name = 'tipo' value = 'atualizar'>"+
+                                    "</div>"+
+                                    "<div class='modal-footer'>"+
+                                    
+                                        "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Fechar janela</button>"+
+                                        "<a class='btn btn-danger' href = '/beer-ecommerce/dash/configuracoes/apagarStatus/"+id+"'"+">Apagar status</a>"+
+                                        "<button type='submit' class='btn btn-primary'>Atualizar</button>"
+                                    "</div>"+
+                                "</form>"+
+                            "</div>"+
+                        "</div>"+
+                    "</div>"
+
+        /* adicionando modal ao body e abrindo-o */ 
+        $("body").append(modal);
+        $("#"+nome_id+id).modal("show");
+
+    })
 
     /* Função para controlar o click do botão de toggle do status de uma bebida */
     $(".toggle-status-bebida").change(function(){

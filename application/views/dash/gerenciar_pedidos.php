@@ -1,5 +1,9 @@
 <?= $this->session->flashdata('gravar_dados_pedidos');?>
 
+<!-- <?= '<pre>' ?>
+<?= print_r($pedidos) ?>
+<?= '</pre>' ?> -->
+
 <div class = "">
     <p class = "title">Filtre o que deseja ver</p>
     <div class = "row">
@@ -31,30 +35,21 @@
         </thead>
         <tbody>
 
-           <tr>
-                <td class="text-center">#1</td>
-                <td class="text-center">R$ 85,50</td>
-                <td class="text-center">10/11/2018</td>
-                <td class="text-center">19/11/2018 às 10:23</td>
-                <td class="text-center">Saiu para entrega</td>
+            <?php foreach($pedidos as $pedido){ ?>
 
-                <td class="text-center">
-                    <a href = '/beer-ecommerce/dash/pedido/editar/3'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
-                </td>
-           </tr>
+            <tr>
+                    <td class="text-center">#<?= $pedido['id_pedido'] ?></td>
+                    <td class="text-center">R$ <?=$pedido['valor_total'] ?></td>
+                    <td class="text-center"><?= formataDataHora($pedido['data_pedido'])?></td>
+                    <td class="text-center"><?= formataDataHora($pedido['data_att_status'])?></td>
+                    <td class="text-center"><?= $pedido['descricao_status'] ?></td>
 
-           <tr>
-                <td class="text-center">#2</td>
-                <td class="text-center">R$ 870,00</td>
-                <td class="text-center">20/11/2018</td>
-                <td class="text-center">20/11/2018 às 15:10</td>
-                <td class="text-center">Pagamento em análise</td>
+                    <td class="text-center">
+                        <a href = '/beer-ecommerce/dash/pedido/editar/3'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                    </td>
+            </tr>
 
-                <td class="text-center">
-                    <a href = '/beer-ecommerce/dash/pedido/editar/2'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
-                </td>
-
-           </tr>
+            <?php } ?>
 
         </tbody>
     </table>

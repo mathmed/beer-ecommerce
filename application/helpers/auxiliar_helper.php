@@ -11,5 +11,17 @@ function formataData( $data){
     } else return "";
 }
 
+/* função para formatar uma data com hora */
+function formataDataHora($data){
+
+    if($data){
+
+        $data = str_replace("-", "/", $data);
+        return date("d/m/Y", strtotime($data)) . " às ". date("H:i:s", strtotime($data));
+    
+    } else return "";
+
+}
+
 
 ?>

@@ -23,6 +23,8 @@ class Pedido extends CI_Controller {
         /* enviando como parâmetro a cor da ul */
         $data['cor_ul_gpedidos'] = 'ul-marcada';
 
+        $data['pedidos'] = $this->pedido_dao->getPedidos();
+
         /* carrega a base da página e a tela de dashboard como padrão */
         $this->load->view("dash/base.php", $data);
         $this->load->view("dash/gerenciar_pedidos.php", $data);

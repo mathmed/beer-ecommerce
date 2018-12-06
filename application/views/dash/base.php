@@ -59,8 +59,8 @@
 							<li><a href='/beer-ecommerce/dash/base'>Início</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_relatorios)) echo $cor_ul_relatorios;?>'>
-							<li><a href='/beer-ecommerce/dash/graficos'><i class='fa fa-chart-line icon-espaco'></i></a></li>
-							<li><a href='/beer-ecommerce/dash/graficos'>Relatórios</a></li>
+							<li><a href='/beer-ecommerce/dash/relatorios'><i class='fa fa-chart-line icon-espaco'></i></a></li>
+							<li><a href='/beer-ecommerce/dash/relatorios'>Relatórios</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_usuarios)) echo $cor_ul_usuarios;?>'>
 							<li><a href='/beer-ecommerce/dash/usuario'><i class='fa fa-users icon-espaco'></i></a></li>

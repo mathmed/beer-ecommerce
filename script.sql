@@ -314,6 +314,7 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`estoque` (
   `valor_compra_unidade` DOUBLE NOT NULL,
   `id_bebida` INT NOT NULL,
   `id_fornecedor` INT NOT NULL,
+  `atual` INT NOT NULL,
   PRIMARY KEY (`id_lote`),
   INDEX `fk_estoque_bebida1_idx` (`id_bebida` ASC) ,
   INDEX `fk_estoque_fornecedor1_idx` (`id_fornecedor` ASC) ,
